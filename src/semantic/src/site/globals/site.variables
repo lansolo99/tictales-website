@@ -1,0 +1,65 @@
+/*******************************
+     User Global Variables
+*******************************/
+
+// Colors
+@primaryColor        : blue;
+
+// Font
+@fontName          : 'Yanone Kaffeesatz';
+@pageFont          : 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+
+
+/*-------------------
+      Base Sizes
+--------------------*/
+
+/* This is the single variable that controls them all */
+@emSize   : 16px;
+
+/* The size of page text  */
+@fontSize : 16px;
+
+
+/*--------------
+  Page Heading
+---------------*/
+
+@headerFontWeight : @bold;
+@headerLineHeight : unit((18 / 14), em);
+
+@h1 : unit((28 / 10), rem);
+@h2 : unit((24 / 14), rem);
+@h3 : unit((18 / 14), rem);
+@h4 : unit((15 / 14), rem);
+@h5 : unit((14 / 14), rem);
+
+
+/*-------------------
+    Border Radius
+--------------------*/
+
+/* See Power-user section below
+   for explanation of @px variables
+*/
+@relativeBorderRadius: @relative2px;
+@absoluteBorderRadius: @2px;
+
+
+/*-------------------
+    Focused Input
+--------------------*/
+
+/* Used on inputs, textarea etc */
+@focusedFormBorderColor: @primaryColor;
+
+
+/*-------------------
+     Breakpoints
+--------------------*/
+
+@mobileBreakpoint            : 320px;
+@tabletBreakpoint            : 768px;
+@computerBreakpoint          : 992px;
+@largeMonitorBreakpoint      : 1300px;
+@widescreenMonitorBreakpoint : 1920px;
