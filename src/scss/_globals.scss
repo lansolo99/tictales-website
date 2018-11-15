@@ -1,3 +1,31 @@
-// h1 {
-//     font-family: 'font-family: "Trade Gothic LT Std";';
-// }
+// S-UI overrides
+
+
+.ui.container.container-main {
+    height: 100%;
+    min-height: 500px;
+    padding: 15px;
+}
+
+.ui.grid.grid-main {
+    height: 100% !important;
+    min-height: 500px;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.ui.grid>.column.column-main:not(.row) {
+    padding: 0 !important;
+    position: relative;
+}
+
+
+// Iconfont
+.icon {
+    &:before {
+        display: inline-block;
+        line-height: 1;
+    }
+}

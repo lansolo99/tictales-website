@@ -24,6 +24,10 @@ var pump = require('pump')
 var iconfont = require('gulp-iconfont')
 var iconfontCss = require('gulp-iconfont-css')
 
+// Iconfont
+var runTimestamp = Math.round(Date.now() / 1000)
+var fontName = 'iconfont'
+
 // VARS
 
 var projectURL = 'localhost:8888'
@@ -158,6 +162,25 @@ gulp.task('minimify-js', function (cb) {
   ],
   cb
   )
+})
+
+// Icon font
+
+gulp.task('iconfont', function () {
+  gulp.src(['./src/images/icons/*.svg'])
+    .pipe(iconfontCss({
+      fontName: fontName,
+      path: './src/scss/templates/_icons.scss',
+      targetPath: '../../scss/_icons.scss',
+      fontPath: '../fonts/icons/'
+    }))
+    .pipe(iconfont({
+      fontName: fontName,
+      normalize: true,
+      fontHeight: 1001,
+      formats: ['ttf', 'eot', 'woff', 'woff2']
+    }))
+    .pipe(gulp.dest('./src/fonts/icons/'))
 })
 
 // Img Copy

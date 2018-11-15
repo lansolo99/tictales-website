@@ -1,3 +1,9 @@
 /*******************************
          Site Overrides
 *******************************/
+
+.ui.menu{
+    box-shadow: none;
+    border: none;
+    background: transparent;
+}

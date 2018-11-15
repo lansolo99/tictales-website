@@ -21,6 +21,7 @@
   "components": [
     "reset",
     "site",
+    "menu",
     "button",
     "container",
     "grid",
