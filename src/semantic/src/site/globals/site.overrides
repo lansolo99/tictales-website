@@ -1,3 +1,15 @@
 /*******************************
          Site Overrides
 *******************************/
+
+/*-------------------
+       Fonts
+--------------------*/
+
+@font-face {
+  font-family: "Trade Gothic LT Std";
+  src: url("../../fonts/TradeGothicLTStd-BdCn20.woff2") format("woff2"),
+    url("../../fonts/TradeGothicLTStd-BdCn20.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}

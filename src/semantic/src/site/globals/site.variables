@@ -2,12 +2,14 @@
      User Global Variables
 *******************************/
 
-// Colors
-@primaryColor        : blue;
+/*-------------------
+       Fonts
+--------------------*/
 
-// Font
-@fontName          : 'Yanone Kaffeesatz';
-@pageFont          : 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+@fontName          : 'Montserrat';
+
+@headerFont        : 'Trade Gothic LT Std', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+@pageFont          : 'Montserrat', 'Helvetica Neue', Arial, Helvetica, sans-serif;
 
 
 /*-------------------

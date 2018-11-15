@@ -2,21 +2,6 @@
          Site Overrides
 *******************************/
 
-
-/* Large Monitor */
-@media only screen and (min-width: @widescreenMonitorBreakpoint) {
-    .ui.container {
-     width: @widescreenMonitorWidth;
-     margin-left: @widescreenMonitorGutter !important;
-     margin-right: @widescreenMonitorGutter !important;
-    }
-    .ui.grid.container {
-      width: @largeMonitorGridWidth !important;
-    }
-    .ui.relaxed.grid.container {
-      width: @largeMonitorRelaxedGridWidth !important;
-    }
-    .ui.very.relaxed.grid.container {
-      width: @largeMonitorVeryRelaxedGridWidth !important;
-    }
-  }
+// .ui.container{
+//     font-weight: 300;
+// }

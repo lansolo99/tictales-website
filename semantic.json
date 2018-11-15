@@ -15,7 +15,7 @@
     },
     "clean": "dist/"
   },
-  "permission": 744,
+  "permission": false,
   "autoInstall": false,
   "rtl": false,
   "components": [
@@ -23,8 +23,8 @@
     "site",
     "button",
     "container",
-    "divider",
-    "grid"
+    "grid",
+    "form"
   ],
   "version": "2.4.2"
 }
