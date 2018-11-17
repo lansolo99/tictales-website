@@ -10,8 +10,8 @@
 
 @mixin icon-styles {
 	font-family: "iconfont";
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: normal;
@@ -27,44 +27,38 @@
 @function icon-char($filename) {
 	$char: "";
 
-	@if $filename==exp1 {
+	@if $filename == exp1 {
 		$char: "\E001";
 	}
-
-	@if $filename==exp2 {
+	@if $filename == exp2 {
 		$char: "\E002";
 	}
-
-	@if $filename==exp3 {
+	@if $filename == exp3 {
 		$char: "\E003";
 	}
-
-	@if $filename==exp4 {
+	@if $filename == exp4 {
 		$char: "\E004";
 	}
-
-	@if $filename==exp5 {
+	@if $filename == exp5 {
 		$char: "\E005";
 	}
-
-	@if $filename==exp6 {
+	@if $filename == exp6 {
 		$char: "\E006";
 	}
-
-	@if $filename==exp7 {
+	@if $filename == exp7 {
 		$char: "\E007";
 	}
-
-	@if $filename==social_facebook {
+	@if $filename == follow {
 		$char: "\E008";
 	}
-
-	@if $filename==social_twitter {
+	@if $filename == social_facebook {
 		$char: "\E009";
 	}
-
-	@if $filename==social_youtube {
+	@if $filename == social_twitter {
 		$char: "\E00A";
+	}
+	@if $filename == social_youtube {
+		$char: "\E00B";
 	}
 
 	@return $char;
@@ -74,12 +68,9 @@
 	&:#{$insert} {
 		@if $extend {
 			@extend %icon;
-		}
-
-		@else {
+		} @else {
 			@include icon-styles;
 		}
-
 		content: icon-char($filename);
 	}
 }
@@ -87,39 +78,33 @@
 .icon-exp1 {
 	@include icon(exp1);
 }
-
 .icon-exp2 {
 	@include icon(exp2);
 }
-
 .icon-exp3 {
 	@include icon(exp3);
 }
-
 .icon-exp4 {
 	@include icon(exp4);
 }
-
 .icon-exp5 {
 	@include icon(exp5);
 }
-
 .icon-exp6 {
 	@include icon(exp6);
 }
-
 .icon-exp7 {
 	@include icon(exp7);
 }
-
+.icon-follow {
+	@include icon(follow);
+}
 .icon-social_facebook {
 	@include icon(social_facebook);
 }
-
 .icon-social_twitter {
 	@include icon(social_twitter);
 }
-
 .icon-social_youtube {
 	@include icon(social_youtube);
 }

@@ -1,3 +1,8 @@
 /*******************************
          Site Overrides
 *******************************/
+
+.ui.button{
+    font-size: 1.2rem;
+    padding: .6875em 1.5em .5em 1.5em;
+}

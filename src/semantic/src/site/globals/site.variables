@@ -65,3 +65,11 @@
 @computerBreakpoint          : 992px;
 @largeMonitorBreakpoint      : 1300px;
 @widescreenMonitorBreakpoint : 1920px;
+
+
+/*-------------------
+      Site Colors
+--------------------*/
+
+/*---  Colors  ---*/
+@orange           : #FF5200;

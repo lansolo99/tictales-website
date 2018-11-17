@@ -1,3 +1,7 @@
 /*******************************
     User Variable Overrides
 *******************************/
+
+@widescreenMonitorMinimumGutter: (@emSize  * 2);
+@widescreenMonitorWidth: @widescreenMonitorBreakpoint - (@widescreenMonitorMinimumGutter * 2) - @scrollbarWidth;
+@widescreenMonitorGutter: auto;

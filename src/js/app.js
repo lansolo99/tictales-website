@@ -55,7 +55,7 @@ $(document).ready(function () {
     direction: 'vertical',
     verticalCentered: true,
     sectionsColor: [],
-    anchors: [],
+    anchors: ['page1', 'page2', 'page3', 'page4'],
     scrollingSpeed: 2000,
     easing: 'swing',
     loopBottom: false,
@@ -65,7 +65,7 @@ $(document).ready(function () {
       'textColor': '#000',
       'bulletsColor': '#000',
       'position': 'right',
-      'tooltips': ['section1', 'section2', 'section3', 'section4']
+      'tooltips': ['Intro', 'Our games', 'Manifesto', 'About us']
     },
     normalScrollElements: null,
     normalScrollElementTouchThreshold: 5,
@@ -79,4 +79,35 @@ $(document).ready(function () {
     afterLoad: function (anchorLink, index) {},
     afterRender: function () {}
   })
+
+  /*******************************
+           Owl caroussel
+  *******************************/
+
+  // Game slider
+
+  var owl = $('.owl-carousel')
+  owl.owlCarousel({
+    margin: 15,
+    nav: true,
+    loop: true,
+    responsive: {
+      0: {
+        items: 1
+      },
+      600: {
+        items: 3
+      },
+      1000: {
+        items: 4
+      }
+    }
+  })
+
+  // Shape to sections mapping
+  let shapesClasses = ['icon-exp1', 'icon-exp2', 'icon-exp3', 'icon-exp4', 'icon-exp5', 'icon-exp6', 'icon-exp7']
+  let allSpanInBullet = document.querySelectorAll('#pp-nav li a span.icon')
+  for (let index = 0; index < allSpanInBullet.length; index++) {
+    allSpanInBullet[index].classList.add(shapesClasses[index])
+  }
 }) // End document Ready
