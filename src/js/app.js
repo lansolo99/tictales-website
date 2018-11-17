@@ -69,7 +69,7 @@ $(document).ready(function () {
     },
     normalScrollElements: null,
     normalScrollElementTouchThreshold: 5,
-    touchSensitivity: 5,
+    touchSensitivity: 10,
     keyboardScrolling: true,
     sectionSelector: '.section',
     animateAnchor: false,
@@ -91,15 +91,26 @@ $(document).ready(function () {
     margin: 15,
     nav: true,
     loop: true,
+    stagePadding: 40,
     responsive: {
       0: {
         items: 1
       },
       600: {
-        items: 3
+        items: 1,
+        stagePadding: 50,
+        nav: true,
+        dots: false
       },
-      1000: {
-        items: 4
+      800: {
+        items: 4,
+        nav: true,
+        dots: false
+      },
+      2000: {
+        items: 4,
+        dots: true,
+        nav: true
       }
     }
   })

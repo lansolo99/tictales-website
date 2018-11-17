@@ -8,6 +8,7 @@
   * - Sections
     * - All sections
     * - Section intro
+    * - Section our games
 */
 
 
@@ -19,6 +20,10 @@
 .tt-header {
   top: 30px !important;
 
+  @include responsive(mobile) {
+    top: 6vw !important;
+  }
+
   &__container {
     position: relative;
     display: flex;
@@ -26,12 +31,20 @@
     // Inegal padding because of scrollable section
     // padding: 0 30px;
     padding: 0 35px 0 25px;
+
+    @include responsive(mobile) {
+      padding: 0vw 6vw 0vw 5vw;
+    }
   }
 
   &__logo {
     width: 150px;
     flex-grow: 0;
     margin-bottom: 0;
+
+    @include responsive(mobile) {
+      width: 30vw;
+    }
 
     img {
       display: block;
@@ -48,15 +61,32 @@
   text-align: right;
   margin: 0;
 
+
   a {
-    color: black
+    color: black;
+    transition: transform 0.1s;
+    display: block;
+
+    &:hover {
+      color: white;
+      transform: scale(1.15)
+    }
   }
 
   &__item {
     display: inline-block;
     font-size: 30px;
-    margin-left: 15px;
+    //font-size: 16px;
+    margin-left: 25px;
+    position: relative;
     top: 3px;
+
+    @include responsive(mobile) {
+      font-size: 6vw;
+      margin-left: 4vw !important;
+      top: 1vw;
+    }
+
   }
 
   &__label {
@@ -78,9 +108,7 @@
 
 // All Sections
 
-.tt-sections {
-  &__main-content {}
-}
+.tt-sections {}
 
 .column-main {
   &.icon-exp1:before {
@@ -90,6 +118,14 @@
     top: 50%;
     left: 60%;
     transform: rotate(-15deg) translateX(-50%) translateY(-50%);
+
+    @include responsive(tablet) {
+      left: 65%;
+    }
+
+    @include responsive(mobile) {
+      font-size: 65vw;
+    }
   }
 }
 
@@ -101,16 +137,33 @@
   top: 50%;
   transform: translateY(-50%);
 
+  @include responsive(tablet) {
+    width: 90%;
+    top: auto;
+    margin-top: 40px;
+    transform: none
+  }
+
 
   &__title {
     font-size: 70px;
     line-height: 70px;
+
+    @include responsive(mobile) {
+      font-size: 46px;
+      line-height: 49px;
+    }
   }
 
   &__plain-text {
     font-size: 22px;
     line-height: 32px;
-    color: white
+    color: white;
+
+    @include responsive(mobile) {
+      font-size: 19px;
+      line-height: 28px;
+    }
   }
 }
 
@@ -130,7 +183,25 @@
       transform: translateX(-50%);
       font-size: 50px;
       color: white;
+
+      @include responsive(tablet) {
+        display: none;
+      }
     }
+  }
+
+  .main-content {
+    width: 85%;
+
+    @include responsive(tablet) {}
+
+    @include responsive(mobile) {
+
+
+      margin-bottom: 15vw;
+    }
+
+
   }
 
   &__illustration-background {
@@ -139,6 +210,19 @@
     background-image: url('../images/backgrounds/homepage_paris.jpg');
     background-size: cover;
     clip-path: polygon(0 0, 85% 0, 100% 100%, 0% 100%);
+
+    @include responsive(tablet) {
+      width: 100%;
+      height: 500px;
+      background-position: center;
+      background-image: url('../images/backgrounds/homepage_paris_mobile@2x.jpg');
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+    }
+
+    @include responsive(mobile) {
+      height: 70vw;
+    }
+
   }
 
   &__illustration-character {
@@ -146,6 +230,33 @@
     bottom: 0;
     right: -10px;
     width: 220px;
+
+    @include responsive(computer) {
+      right: -40px;
+    }
+
+    @include responsive(tablet) {
+      display: none;
+    }
+
+    &--mobile {
+      display: none;
+
+
+      @include responsive(tablet) {
+        display: block;
+        bottom: -70px;
+        right: 110px;
+      }
+
+      @include responsive(mobile) {
+        width: 40vw;
+        bottom: auto;
+        top: 20vw;
+        right: 10vw;
+      }
+    }
+
   }
 
   &__speech-bubble {
@@ -158,6 +269,25 @@
     font-size: 18px;
     line-height: 1.5em;
     box-shadow: 2px 2px 4px 0px rgba(black, 0.3);
+
+    @include responsive(computer) {
+      right: 100px;
+    }
+
+    @include responsive(tablet) {
+      right: 250px;
+      bottom: 310px;
+    }
+
+    @include responsive(mobile) {
+      bottom: auto;
+      top: 18vw;
+      right: 37vw;
+      padding: 3vw 5vw;
+      border-radius: 1vw;
+      font-size: 4vw;
+      line-height: 5.5vw;
+    }
   }
 
   &__speech-bubble:after {
@@ -194,6 +324,19 @@
   .main-content {
     width: 85%;
 
+    @include responsive(tablet) {
+      width: 90%;
+      top: auto;
+      margin-top: 140px;
+      transform: none
+    }
+
+    @include responsive(mobile) {
+      width: 90%;
+      margin-top: 25vw;
+      margin-bottom: 15vw;
+    }
+
     &__plain-text {
       width: 80%;
       margin: auto;
@@ -204,21 +347,98 @@
 
 .tt-carousel-games {
 
+  // Owl
+
   .owl-stage-outer {
     padding-bottom: 10px;
   }
 
+  .owl-nav {
+
+    button.owl-prev,
+    button.owl-next,
+      {
+      position: absolute;
+      width: 44px;
+      height: 44px;
+      border-radius: 22px;
+      margin: 0vw;
+      color: red;
+      background: white;
+      box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+      transition: transform 0.1s;
+
+      @include responsive(mobile) {
+        width: 10vw;
+        height: 10vw;
+        border-radius: 5vw;
+        margin: 3vw;
+      }
+
+      span {
+        position: relative;
+        text-align: center;
+        display: block;
+        margin: auto;
+        top: -6px;
+        font-size: 50px;
+
+        @include responsive(mobile) {
+          top: -1vw;
+          font-size: 12vw;
+        }
+
+
+
+      }
+    }
+
+    button.owl-prev {
+      top: 50%;
+      transform: translateY(-50%) translateX(-50%);
+      left: 0;
+
+      &:hover {
+        transform: translateY(-50%) translateX(-50%) scale(1.15);
+      }
+
+    }
+
+    button.owl-next {
+      top: 50%;
+      transform: translateY(-50%) translateX(50%);
+      right: 0;
+
+      &:hover {
+        transform: translateY(-50%) translateX(50%) scale(1.15);
+      }
+    }
+
+
+    button.owl-prev,
+    button.owl-next,
+      {
+      @include responsive(mobile) {
+        display: none;
+        position: static;
+        top: auto;
+        left: auto;
+        right: auto;
+        transform: none;
+      }
+    }
+  }
+
+  // Elements
   &__item-wrapper {
     cursor: pointer;
     display: block;
     position: relative;
     color: white;
-    width: 245px;
-    height: 274px;
     text-align: center;
     border-radius: 5px;
     overflow: visible;
-    box-shadow: 2px 2px 4px 0px rgba(black, 0.3);
+    box-shadow: 0px 0px 4px 0px rgba(black, 0.5);
   }
 
   &__cover {
@@ -228,7 +448,7 @@
 
   &__dimmer {
     position: absolute;
-    top: 50%;
+    top: 20%;
     bottom: -1px;
     left: 0;
     right: 0;
@@ -250,7 +470,8 @@
     color: white;
     text-align: center;
     font-size: 25px;
-    margin-bottom: 20px;
+    line-height: 1.1em;
+    margin-bottom: 15px;
     display: block;
     width: 100%;
   }

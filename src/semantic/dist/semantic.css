@@ -7146,6 +7146,12 @@ Floated Menu / Item
 .ui.button {
   font-size: 1.2rem;
   padding: 0.6875em 1.5em 0.5em 1.5em;
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.5);
+}
+
+.ui.orange.button {
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.5);
 }
 /*!
  * # Semantic UI 2.4.2 - Container
@@ -7313,7 +7319,7 @@ Floated Menu / Item
          Site Overrides
 *******************************/
 
-/* Large Monitor */
+/* Large Monitor (widescreen) */
 
 @media only screen and (min-width: 1920px) {
   .ui.container {

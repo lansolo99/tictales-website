@@ -2,28 +2,42 @@
              Mixins
 *******************************/
 
+// S-UI Breakpoints :
+// @mobileBreakpoint            : 320px; (320 ->767)
+// @tabletBreakpoint            : 768px; (768 -> 991)
+// @computerBreakpoint          : 992px; (992 -> 1299)
+// @largeMonitorBreakpoint      : 1300px; (1300 -> 1919)
+// @widescreenMonitorBreakpoint : 1920px; (1920 -> ...)
+
 //Responsive breakpoints
-
 @mixin responsive($width) {
-  @if $width == mobile {
-    @media only screen and (max-width: 767px) { @content; }
-  }
-  @else if $width == tablet {
-    @media only screen and (max-width: 991px) { @content; }
-  }
-  @else if $width == desktop {
-    @media only screen and (min-width: 900px) { @content; }
+  @if $width==mobile {
+    @media only screen and (max-width: 767px) {
+      @content;
+    }
   }
 
+  @else if $width==tablet {
+    @media only screen and (max-width: 991px) {
+      @content;
+    }
+  }
 
-/*   @else if $width == small-monitor {
-  @media only screen and (max-width: 1199px) { @content; }
+  @else if $width==computer {
+    @media only screen and (max-width: 1299px) {
+      @content;
+    }
+  }
+
+  @else if $width==largeMonitor {
+    @media only screen and (max-width: 1919px) {
+      @content;
+    }
+  }
+
+  @else if $width==widescreen {
+    @media only screen and (min-width: 1920px) {
+      @content;
+    }
+  }
 }
-@else if $width == large-monitor {
-  @media only screen and (min-width: 1200px) { @content; }
-}
-@else if $width == widescreen {
-  @media only screen and (min-width: 1920px) { @content; }
-} */
-}
-//
