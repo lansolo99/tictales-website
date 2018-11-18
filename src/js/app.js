@@ -43,7 +43,6 @@ $(document).ready(function () {
   function checkSizeBrowser () {
     docWidth = jQuery(window).width()
     docHeight = jQuery(document).height()
-    console.log('test !')
   }
 
   /*******************************
@@ -62,10 +61,10 @@ $(document).ready(function () {
     loopTop: false,
     css3: true,
     navigation: {
-      'textColor': '#000',
-      'bulletsColor': '#000',
-      'position': 'right',
-      'tooltips': ['Intro', 'Our games', 'Manifesto', 'About us']
+      textColor: '#000',
+      bulletsColor: '#000',
+      position: 'right',
+      tooltips: ['Intro', 'Our games', 'Manifesto', 'About us']
     },
     normalScrollElements: null,
     normalScrollElementTouchThreshold: 5,
@@ -98,7 +97,6 @@ $(document).ready(function () {
       },
       600: {
         items: 1,
-        stagePadding: 50,
         nav: true,
         dots: false
       },
@@ -116,7 +114,15 @@ $(document).ready(function () {
   })
 
   // Shape to sections mapping
-  let shapesClasses = ['icon-exp1', 'icon-exp2', 'icon-exp3', 'icon-exp4', 'icon-exp5', 'icon-exp6', 'icon-exp7']
+  let shapesClasses = [
+    'icon-exp1',
+    'icon-exp2',
+    'icon-exp3',
+    'icon-exp4',
+    'icon-exp5',
+    'icon-exp6',
+    'icon-exp7'
+  ]
   let allSpanInBullet = document.querySelectorAll('#pp-nav li a span.icon')
   for (let index = 0; index < allSpanInBullet.length; index++) {
     allSpanInBullet[index].classList.add(shapesClasses[index])

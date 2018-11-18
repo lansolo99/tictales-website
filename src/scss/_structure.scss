@@ -9,16 +9,19 @@
     * - All sections
     * - Section intro
     * - Section our games
+    * - Section manifesto
+    * - Section about us
 */
-
-
 
 /*******************************
            Header
 *******************************/
 
 .tt-header {
+  position: absolute;
+  background-color: transparent;
   top: 30px !important;
+  z-index: 100;
 
   @include responsive(mobile) {
     top: 6vw !important;
@@ -61,7 +64,6 @@
   text-align: right;
   margin: 0;
 
-
   a {
     color: black;
     transition: transform 0.1s;
@@ -69,7 +71,7 @@
 
     &:hover {
       color: white;
-      transform: scale(1.15)
+      transform: scale(1.15);
     }
   }
 
@@ -86,7 +88,6 @@
       margin-left: 4vw !important;
       top: 1vw;
     }
-
   }
 
   &__label {
@@ -99,7 +100,6 @@
     clip: rect(0, 0, 0, 0);
     border: 0;
   }
-
 }
 
 /*******************************
@@ -111,7 +111,7 @@
 .tt-sections {}
 
 .column-main {
-  &.icon-exp1:before {
+  &.icon:before {
     position: absolute;
     font-size: 500px;
     opacity: 0.07;
@@ -141,9 +141,8 @@
     width: 90%;
     top: auto;
     margin-top: 40px;
-    transform: none
+    transform: none;
   }
-
 
   &__title {
     font-size: 70px;
@@ -164,16 +163,19 @@
       font-size: 19px;
       line-height: 28px;
     }
+
+    &--small {
+      font-size: 18px;
+      line-height: 24px;
+    }
   }
 }
-
 
 // Section intro
 
 .section-intro {
   background: $color-tt-orange;
   position: relative;
-
 
   .column-main {
     &__follow {
@@ -196,18 +198,14 @@
     @include responsive(tablet) {}
 
     @include responsive(mobile) {
-
-
       margin-bottom: 15vw;
     }
-
-
   }
 
   &__illustration-background {
     width: 100%;
     height: 100%;
-    background-image: url('../images/backgrounds/homepage_paris.jpg');
+    background-image: url("../images/backgrounds/homepage_paris.jpg");
     background-size: cover;
     clip-path: polygon(0 0, 85% 0, 100% 100%, 0% 100%);
 
@@ -215,14 +213,13 @@
       width: 100%;
       height: 500px;
       background-position: center;
-      background-image: url('../images/backgrounds/homepage_paris_mobile@2x.jpg');
+      background-image: url("../images/backgrounds/homepage_paris_mobile@2x.jpg");
       clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
     }
 
     @include responsive(mobile) {
       height: 70vw;
     }
-
   }
 
   &__illustration-character {
@@ -242,7 +239,6 @@
     &--mobile {
       display: none;
 
-
       @include responsive(tablet) {
         display: block;
         bottom: -70px;
@@ -256,7 +252,6 @@
         right: 10vw;
       }
     }
-
   }
 
   &__speech-bubble {
@@ -265,7 +260,7 @@
     right: 140px;
     padding: 15px 30px;
     background: white;
-    border-radius: .4em;
+    border-radius: 0.4em;
     font-size: 18px;
     line-height: 1.5em;
     box-shadow: 2px 2px 4px 0px rgba(black, 0.3);
@@ -291,7 +286,7 @@
   }
 
   &__speech-bubble:after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 70%;
@@ -304,9 +299,7 @@
     margin-left: -0.5em;
     margin-bottom: -1em;
   }
-
 }
-
 
 // Section Our games
 
@@ -328,7 +321,7 @@
       width: 90%;
       top: auto;
       margin-top: 140px;
-      transform: none
+      transform: none;
     }
 
     @include responsive(mobile) {
@@ -346,7 +339,6 @@
 }
 
 .tt-carousel-games {
-
   // Owl
 
   .owl-stage-outer {
@@ -356,8 +348,7 @@
   .owl-nav {
 
     button.owl-prev,
-    button.owl-next,
-      {
+    button.owl-next {
       position: absolute;
       width: 44px;
       height: 44px;
@@ -387,9 +378,6 @@
           top: -1vw;
           font-size: 12vw;
         }
-
-
-
       }
     }
 
@@ -401,7 +389,6 @@
       &:hover {
         transform: translateY(-50%) translateX(-50%) scale(1.15);
       }
-
     }
 
     button.owl-next {
@@ -414,10 +401,8 @@
       }
     }
 
-
     button.owl-prev,
-    button.owl-next,
-      {
+    button.owl-next {
       @include responsive(mobile) {
         display: none;
         position: static;
@@ -437,13 +422,20 @@
     color: white;
     text-align: center;
     border-radius: 5px;
-    overflow: visible;
+    overflow: hidden;
     box-shadow: 0px 0px 4px 0px rgba(black, 0.5);
+
+    &:hover {
+      .tt-carousel-games__cover {
+        transform: scale(1.1);
+      }
+    }
   }
 
   &__cover {
     display: block;
     border-radius: 5px;
+    transition: transform 0.2s;
   }
 
   &__dimmer {
@@ -475,21 +467,127 @@
     display: block;
     width: 100%;
   }
-
-
 }
 
+// Section Manifesto
 
-
-
-.section3 {
+.section-manifesto {
   background: $color-tt-blue;
+
+  .main-content {
+    text-align: justify;
+
+    &__tictales-logo {
+      width: 100px;
+    }
+
+    &__signature {
+
+      img,
+      span {
+        vertical-align: middle;
+      }
+
+      span {
+        font-family: "Trade Gothic LT Std";
+        position: relative;
+        top: 5px;
+      }
+
+    }
+  }
+
+  .ui.container.container-main {
+    min-height: 900px;
+  }
+
+  &__illustration-background {
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/backgrounds/tictales_games_mosaic@2x.jpg");
+    background-size: cover;
+    clip-path: polygon(15% 0, 0 100%, 100% 100%, 100% 0%);
+
+    @include responsive(tablet) {
+      width: 100%;
+      height: 500px;
+      background-position: center;
+      background-image: url("../images/backgrounds/homepage_paris_mobile@2x.jpg");
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+    }
+
+    @include responsive(mobile) {
+      height: 70vw;
+    }
+  }
 }
 
-.section4 {
+
+// Section About us
+
+.section-about-us {
   background: $color-tt-yellow;
-}
 
+  &__illustration-background {
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/backgrounds/asian_street@2x.jpg");
+    background-size: cover;
+    clip-path: polygon(0 0, 85% 0, 100% 100%, 0% 100%);
+
+    @include responsive(tablet) {
+      width: 100%;
+      height: 500px;
+      background-position: center;
+      background-image: url("../images/backgrounds/homepage_paris_mobile@2x.jpg");
+      clip-path: polygon(0 0, 85% 0, 100% 100%, 0% 100%);
+    }
+
+    @include responsive(mobile) {
+      height: 70vw;
+    }
+  }
+
+  &__illustration-floating {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -20px;
+    width: 220px;
+
+    @include responsive(computer) {
+      right: -40px;
+    }
+
+    @include responsive(tablet) {
+      display: none;
+    }
+
+    &--mobile {
+      display: none;
+
+      @include responsive(tablet) {
+        display: block;
+        bottom: -70px;
+        right: 110px;
+      }
+
+      @include responsive(mobile) {
+        width: 40vw;
+        bottom: auto;
+        top: 20vw;
+        right: 10vw;
+      }
+    }
+  }
+
+  .main-content {
+    &__plain-text {
+      color: black;
+    }
+  }
+
+}
 
 /*******************************
           Identifying
