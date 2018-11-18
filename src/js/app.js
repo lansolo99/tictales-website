@@ -3,35 +3,79 @@ $(document).ready(function () {
                Setup
   *******************************/
 
-  // Vars
-  var docWidth
-  var docHeight
-  var currentScreen
+  // General vars
+  let docWidth
+  let docHeight
+  let currentScreen
 
-  // /*******************************
-  //           Enquire.js
-  // *******************************/
+  // Containers refs vars
+  let containerMainIntro = document.querySelector(
+    '.section-intro .ui.container.container-main'
+  )
+  let containerOurGames = document.querySelector(
+    '.section-ourgames .ui.container.container-main'
+  )
+  let containerManifesto = document.querySelector(
+    '.section-manifesto .ui.container.container-main'
+  )
+  let containerAboutUs = document.querySelector(
+    '.section-about-us .ui.container.container-main'
+  )
+  let containerOurValues = document.querySelector(
+    '.section-our-values .ui.container.container-main'
+  )
+  let containerJoinUs = document.querySelector(
+    '.section-join-us .ui.container.container-main'
+  )
+  let containerContact = document.querySelector(
+    '.section-contact-us .ui.container.container-main'
+  )
 
-  // enquire.register("screen and (max-width: 767px)", {match : function() {
-  //   currentScreen = 'mobile';
-  //   checkSizeBrowser();
-  // }});
-  // enquire.register("screen and (min-width: 768px) and (max-width: 991px)", {match : function() {
-  //   currentScreen = 'tablet';
-  //   checkSizeBrowser();
-  // }});
-  // enquire.register("screen and (min-width: 992px) and (max-width: 1199px)", {match : function() {
-  //   currentScreen = 'small-monitor';
-  //   checkSizeBrowser();
-  // }});
-  // enquire.register("screen and (min-width: 1200px)", {match : function() {
-  //   currentScreen = 'large-monitor';
-  //   checkSizeBrowser();
-  // }});
-  // enquire.register("screen and (min-width: 1920px)", {match : function() {
-  //   currentScreen = 'widescreen';
-  //   checkSizeBrowser();
-  // }});
+  let mainContentBaseMargins = 240
+
+  // Main-content height vars
+  let contentHeightIntro
+  let contentHeightOurGames
+  let contentHeightManifesto
+  let contentHeightAboutUs
+  let contentHeightOurValues
+  let contentHeightJoinUs
+  let contentHeightContact
+
+  /*******************************
+            Enquire.js
+  *******************************/
+
+  enquire.register('screen and (max-width: 767px)', {
+    match: function () {
+      currentScreen = 'mobile'
+      checkSizeBrowser()
+    }
+  })
+  enquire.register('screen and (min-width: 768px) and (max-width: 991px)', {
+    match: function () {
+      currentScreen = 'tablet'
+      checkSizeBrowser()
+    }
+  })
+  enquire.register('screen and (min-width: 992px) and (max-width: 1199px)', {
+    match: function () {
+      currentScreen = 'small-monitor'
+      checkSizeBrowser()
+    }
+  })
+  enquire.register('screen and (min-width: 1200px)', {
+    match: function () {
+      currentScreen = 'large-monitor'
+      checkSizeBrowser()
+    }
+  })
+  enquire.register('screen and (min-width: 1920px)', {
+    match: function () {
+      currentScreen = 'widescreen'
+      checkSizeBrowser()
+    }
+  })
 
   /*******************************
           CheckSizeBrowser
@@ -43,7 +87,36 @@ $(document).ready(function () {
   function checkSizeBrowser () {
     docWidth = jQuery(window).width()
     docHeight = jQuery(document).height()
+
+    // Main-content Heights update
+    contentHeightIntro = document.querySelector(
+      '.section-intro .main-content').clientHeight + mainContentBaseMargins
+    contentHeightOurGames = document.querySelector(
+      '.section-ourgames .main-content').clientHeight + mainContentBaseMargins
+    contentHeightManifesto = document.querySelector(
+      '.section-manifesto .main-content').clientHeight + mainContentBaseMargins
+    contentHeightAboutUs = document.querySelector(
+      '.section-about-us .main-content').clientHeight + mainContentBaseMargins
+    contentHeightOurValues = document.querySelector(
+      '.section-our-values .main-content').clientHeight + mainContentBaseMargins
+    contentHeightJoinUs = document.querySelector(
+      '.section-our-values .main-content').clientHeight + mainContentBaseMargins
+    contentHeightContact = document.querySelector(
+      '.section-contact-us .main-content').clientHeight + mainContentBaseMargins
+
+    // Set main-container min-heights (depending on main-content's height)
+    containerMainIntro.style.minHeight = contentHeightIntro + 'px'
+    containerOurGames.style.minHeight = contentHeightOurGames + 'px'
+    containerManifesto.style.minHeight = contentHeightManifesto + 'px'
+    containerAboutUs.style.minHeight = contentHeightAboutUs + 'px'
+    containerOurValues.style.minHeight = contentHeightOurValues + 'px'
+    containerJoinUs.style.minHeight = contentHeightJoinUs + 'px'
+    containerContact.style.minHeight = contentHeightContact + 'px'
   }
+
+  checkSizeBrowser()
+
+  setTimeout(checkSizeBrowser, 5)
 
   /*******************************
           Page piling
@@ -54,7 +127,7 @@ $(document).ready(function () {
     direction: 'vertical',
     verticalCentered: true,
     sectionsColor: [],
-    anchors: ['page1', 'page2', 'page3', 'page4'],
+    anchors: ['intro', 'ourgames', 'manifesto', 'aboutus', 'ourvalues', 'joinus', 'contactus'],
     scrollingSpeed: 2000,
     easing: 'swing',
     loopBottom: false,
@@ -64,7 +137,7 @@ $(document).ready(function () {
       textColor: '#000',
       bulletsColor: '#000',
       position: 'right',
-      tooltips: ['Intro', 'Our games', 'Manifesto', 'About us']
+      tooltips: ['Intro', 'Our games', 'Manifesto', 'About us', 'Our values', 'Join us', 'Contact us']
     },
     normalScrollElements: null,
     normalScrollElementTouchThreshold: 5,

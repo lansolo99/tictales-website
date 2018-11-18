@@ -11,6 +11,10 @@
     * - Section our games
     * - Section manifesto
     * - Section about us
+    * - Section our values
+    * - Section join us
+    * - Section contact us
+    * - Footer
 */
 
 /*******************************
@@ -155,6 +159,7 @@
   }
 
   &__plain-text {
+    margin-top: 30px;
     font-size: 22px;
     line-height: 32px;
     color: white;
@@ -305,14 +310,6 @@
 
 .section-ourgames {
   background: $color-tt-green;
-
-  .ui.container.container-main {
-    min-height: 650px;
-  }
-
-  .ui.grid.grid-main {
-    min-height: 650px;
-  }
 
   .main-content {
     width: 85%;
@@ -476,6 +473,7 @@
 
   .main-content {
     text-align: justify;
+    width: 85%;
 
     &__tictales-logo {
       width: 100px;
@@ -483,13 +481,15 @@
 
     &__signature {
 
+      margin-top: 40px;
+
       img,
       span {
         vertical-align: middle;
       }
 
       span {
-        font-family: "Trade Gothic LT Std";
+        font-family: $headerFont;
         position: relative;
         top: 5px;
       }
@@ -497,9 +497,6 @@
     }
   }
 
-  .ui.container.container-main {
-    min-height: 900px;
-  }
 
   &__illustration-background {
     width: 100%;
@@ -588,6 +585,258 @@
   }
 
 }
+
+
+
+// Section Our values
+
+.section-our-values {
+  background: $color-tt-green;
+
+  .column-main {
+    &.icon:before {
+      left: 50%;
+    }
+  }
+
+  .main-content {
+    width: 85%;
+    position: relative;
+
+    &__illustration-values {
+      width: 100%;
+      margin-top: 50px;
+      max-width: 800px;
+      margin: auto;
+      margin-top: 200px;
+      height: 180px;
+      display: block;
+      background-image: url('../images/backgrounds/pond_desktop@2x.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      text-align: center;
+    }
+
+    &__illustration-characters {
+      position: absolute;
+      display: block;
+      margin: auto;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0;
+      width: 60%;
+    }
+
+    @include responsive(tablet) {
+      width: 90%;
+      top: auto;
+      margin-top: 140px;
+      transform: none;
+    }
+
+    @include responsive(mobile) {
+      width: 90%;
+      margin-top: 25vw;
+      margin-bottom: 15vw;
+    }
+
+    &__plain-text {
+      width: 80%;
+      margin: auto;
+      margin-bottom: 2em;
+    }
+  }
+}
+
+
+// Section Join us
+
+.section-join-us {
+  background: $color-tt-blue;
+}
+
+.job-board {
+
+  width: 90%;
+  margin: auto;
+  margin-top: 50px;
+
+  &__title {
+    font-size: 26px;
+  }
+
+  &__item {
+    display: flex;
+    list-style-type: none;
+    margin-top: 20px;
+    padding-top: 20px;
+
+    &:not(:first-child) {
+      border-top: 1px solid rgba(white, 0.5);
+    }
+  }
+
+  &__position {
+    flex-grow: 1;
+    text-align: left;
+    vertical-align: middle;
+    font-size: 21px;
+    margin-bottom: 0;
+    height: auto;
+
+    span {
+      display: block;
+      position: relative;
+      top: 55%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__description {
+    flex-grow: 0;
+    vertical-align: middle;
+    color: white;
+
+    .ui.button {
+      margin-left: 15px !important;
+    }
+  }
+
+}
+
+
+// Section Contact us
+
+.section-contact-us {
+  background: $color-tt-orange;
+}
+
+.ui.inverted.form.contact-form {
+  width: 100%;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  text-align: left;
+
+  .field {
+    text-align: left;
+    color: white;
+
+    >label {
+      font-size: 18px !important;
+      font-weight: 300 !important;
+
+      &:after {
+        color: white;
+      }
+    }
+
+    input,
+    textarea {
+      background-color: transparent;
+      font-family: $headerFont;
+      font-size: 30px;
+      border: none;
+      border-bottom: 1px solid white;
+      color: white;
+      padding-left: 0;
+      padding-top: 10px;
+      padding-bottom: 5px;
+      border-radius: 0;
+
+      &::placeholder {
+        color: rgba(white, 0.5);
+      }
+
+      &:focus-within {
+        border-bottom: 3px solid white;
+      }
+    }
+
+    textarea {}
+  }
+
+  .ui.button.contact-form__submit {
+    background-color: white !important;
+    color: black;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    transition: transform 0.1s, color 0.1s;
+
+    &:hover {
+      box-shadow: 0 0 4px 0 rgba(0, 0, 0, .5);
+      transform: scale(1.07);
+      color: $color-tt-orange;
+    }
+  }
+}
+
+
+
+/*******************************
+           Footer
+*******************************/
+
+.tt-footer {
+  position: absolute;
+  bottom: 15px;
+  background-color: black;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center !important;
+  padding: 5px 20px 5px 20px;
+
+  @include responsive(mobile) {
+    // top: 6vw !important;
+  }
+
+  &__logo {
+    width: 110px;
+    flex-grow: 0;
+    margin: 5px 0;
+
+    @include responsive(mobile) {
+      width: 30vw;
+    }
+
+    img {
+      display: block;
+    }
+  }
+
+  &__content-info {
+    flex-grow: 2;
+    text-align: right;
+    margin: 0;
+  }
+}
+
+.content-info {
+  list-style-type: none;
+
+  &__item {
+    display: inline-block;
+    font-size: 14px;
+    padding: 0 5px 0 10px;
+
+    a {
+      color: $color-tt-grey-footer;
+      transition: color 0.1s;
+
+      &:hover {
+        color: white;
+      }
+    }
+
+
+    &:not(:first-child) {
+      border-left: 1px solid rgba($color-tt-grey-footer, 0.5);
+    }
+  }
+}
+
 
 /*******************************
           Identifying
