@@ -22,26 +22,16 @@
 *******************************/
 
 .tt-header {
-  position: absolute;
   background-color: transparent;
   top: 30px !important;
+  display: flex;
   z-index: 100;
+  display: flex;
+  align-items: center !important;
+  width: 100%;
 
   @include responsive(mobile) {
     top: 6vw !important;
-  }
-
-  &__container {
-    position: relative;
-    display: flex;
-    align-items: center !important;
-    // Inegal padding because of scrollable section
-    // padding: 0 30px;
-    padding: 0 35px 0 25px;
-
-    @include responsive(mobile) {
-      padding: 0vw 6vw 0vw 5vw;
-    }
   }
 
   &__logo {
@@ -82,7 +72,6 @@
   &__item {
     display: inline-block;
     font-size: 30px;
-    //font-size: 16px;
     margin-left: 25px;
     position: relative;
     top: 3px;
@@ -182,6 +171,7 @@
   background: $color-tt-orange;
   position: relative;
 
+  // Follow item
   .column-main {
     &__follow {
       position: absolute;
@@ -198,9 +188,11 @@
   }
 
   .main-content {
-    width: 85%;
+    width: 65%;
 
-    @include responsive(tablet) {}
+    @include responsive(tablet) {
+      width: 85%;
+    }
 
     @include responsive(mobile) {
       margin-bottom: 15vw;
@@ -314,6 +306,12 @@
   .main-content {
     width: 85%;
 
+    // Added center vertically
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 0;
+    margin-bottom: 0;
+
     @include responsive(tablet) {
       width: 90%;
       top: auto;
@@ -355,6 +353,11 @@
       background: white;
       box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
       transition: transform 0.1s;
+
+      @include responsive(tablet) {
+        display: none;
+      }
+
 
       @include responsive(mobile) {
         width: 10vw;
@@ -506,11 +509,9 @@
     clip-path: polygon(15% 0, 0 100%, 100% 100%, 100% 0%);
 
     @include responsive(tablet) {
+      display: none;
       width: 100%;
       height: 500px;
-      background-position: center;
-      background-image: url("../images/backgrounds/homepage_paris_mobile@2x.jpg");
-      clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
     }
 
     @include responsive(mobile) {
@@ -524,6 +525,20 @@
 
 .section-about-us {
   background: $color-tt-yellow;
+  position: relative;
+
+  .main-content {
+    width: 65%;
+
+    @include responsive(tablet) {
+      width: 85%;
+    }
+
+    @include responsive(mobile) {
+      margin-bottom: 15vw;
+    }
+  }
+
 
   &__illustration-background {
     width: 100%;
@@ -536,8 +551,8 @@
       width: 100%;
       height: 500px;
       background-position: center;
-      background-image: url("../images/backgrounds/homepage_paris_mobile@2x.jpg");
-      clip-path: polygon(0 0, 85% 0, 100% 100%, 0% 100%);
+      background-image: url("../images/backgrounds/asian_street_mobile@2x.jpg");
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
     }
 
     @include responsive(mobile) {
@@ -565,15 +580,11 @@
 
       @include responsive(tablet) {
         display: block;
-        bottom: -70px;
-        right: 110px;
-      }
+        top: 50%;
+        left: 50%;
+        width: 35vw;
+        transform: translateX(-50%) translateY(-20vw);
 
-      @include responsive(mobile) {
-        width: 40vw;
-        bottom: auto;
-        top: 20vw;
-        right: 10vw;
       }
     }
   }
@@ -603,6 +614,12 @@
     width: 85%;
     position: relative;
 
+    // Added center vertically
+    //  top: 50%;
+    //  transform: translateY(-50%);
+    //  margin-top: 0;
+    //  margin-bottom: 0;
+
     &__illustration-values {
       width: 100%;
       margin-top: 50px;
@@ -616,6 +633,11 @@
       background-position: center;
       position: relative;
       text-align: center;
+
+      @include responsive(mobile) {
+        margin-top: 25vw;
+        height: 30vw;
+      }
     }
 
     &__illustration-characters {
@@ -626,6 +648,10 @@
       transform: translateX(-50%);
       bottom: 0;
       width: 60%;
+
+      @include responsive(tablet) {
+        width: 90%;
+      }
     }
 
     @include responsive(tablet) {
@@ -638,7 +664,7 @@
     @include responsive(mobile) {
       width: 90%;
       margin-top: 25vw;
-      margin-bottom: 15vw;
+      margin-bottom: 20vw;
     }
 
     &__plain-text {
@@ -654,6 +680,16 @@
 
 .section-join-us {
   background: $color-tt-blue;
+
+  .main-content {
+
+    @include responsive(mobile) {
+      margin-top: 30vw;
+      margin-bottom: 50vw;
+    }
+
+  }
+
 }
 
 .job-board {
@@ -662,8 +698,13 @@
   margin: auto;
   margin-top: 50px;
 
+
   &__title {
     font-size: 26px;
+  }
+
+  ul {
+    padding-left: 0;
   }
 
   &__item {
@@ -671,6 +712,10 @@
     list-style-type: none;
     margin-top: 20px;
     padding-top: 20px;
+
+    @include responsive(computer) {
+      display: block;
+    }
 
     &:not(:first-child) {
       border-top: 1px solid rgba(white, 0.5);
@@ -685,11 +730,20 @@
     margin-bottom: 0;
     height: auto;
 
+    @include responsive(computer) {
+      // width: 100%;
+    }
+
     span {
       display: block;
       position: relative;
       top: 55%;
       transform: translateY(-50%);
+
+      @include responsive(computer) {
+        top: Opx;
+        transform: none;
+      }
     }
   }
 
@@ -698,8 +752,19 @@
     vertical-align: middle;
     color: white;
 
+    @include responsive(computer) {
+      text-align: left;
+    }
+
     .ui.button {
       margin-left: 15px !important;
+
+      @include responsive(computer) {
+        display: block;
+        width: 100px;
+        margin-left: 0 !important;
+        margin-top: 10px;
+      }
     }
   }
 
@@ -781,25 +846,24 @@
 .tt-footer {
   position: absolute;
   bottom: 15px;
+  right: 15px;
+  left: 15px;
   background-color: black;
-  width: 100%;
   height: 50px;
   display: flex;
   align-items: center !important;
-  padding: 5px 20px 5px 20px;
+  //padding: 5px 20px 5px 20px;
+  padding: 15px 20px;
 
-  @include responsive(mobile) {
-    // top: 6vw !important;
+  @include responsive(tablet) {
+    display: block;
+    height: auto;
   }
 
   &__logo {
     width: 110px;
     flex-grow: 0;
     margin: 5px 0;
-
-    @include responsive(mobile) {
-      width: 30vw;
-    }
 
     img {
       display: block;
@@ -810,11 +874,21 @@
     flex-grow: 2;
     text-align: right;
     margin: 0;
+
+    @include responsive(tablet) {
+      text-align: left;
+      padding: 0;
+    }
   }
 }
 
 .content-info {
   list-style-type: none;
+
+  @include responsive(tablet) {
+    margin-top: 15px;
+    //margin-bottom: 15px;
+  }
 
   &__item {
     display: inline-block;
@@ -833,9 +907,19 @@
 
     &:not(:first-child) {
       border-left: 1px solid rgba($color-tt-grey-footer, 0.5);
+
+      @include responsive(mobile) {
+        border: none;
+      }
+    }
+
+    @include responsive(mobile) {
+      display: block;
+      padding: 5px 0px;
     }
   }
 }
+
 
 
 /*******************************

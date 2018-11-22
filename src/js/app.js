@@ -87,7 +87,7 @@ $(document).ready(function () {
   function checkSizeBrowser () {
     docWidth = jQuery(window).width()
     docHeight = jQuery(document).height()
-
+    document.querySelector('.screen-res-indicator').innerHTML = docWidth
     // Main-content Heights update
     contentHeightIntro = document.querySelector(
       '.section-intro .main-content').clientHeight + mainContentBaseMargins
@@ -98,7 +98,7 @@ $(document).ready(function () {
     contentHeightAboutUs = document.querySelector(
       '.section-about-us .main-content').clientHeight + mainContentBaseMargins
     contentHeightOurValues = document.querySelector(
-      '.section-our-values .main-content').clientHeight + mainContentBaseMargins
+      '.section-our-values .main-content').clientHeight
     contentHeightJoinUs = document.querySelector(
       '.section-our-values .main-content').clientHeight + mainContentBaseMargins
     contentHeightContact = document.querySelector(
@@ -123,12 +123,12 @@ $(document).ready(function () {
   *******************************/
 
   $('#pagepiling').pagepiling({
+    anchors: ['intro', 'ourgames', 'manifesto', 'aboutus', 'ourvalues', 'joinus', 'contactus'],
     menu: null,
     direction: 'vertical',
     verticalCentered: true,
     sectionsColor: [],
-    anchors: ['intro', 'ourgames', 'manifesto', 'aboutus', 'ourvalues', 'joinus', 'contactus'],
-    scrollingSpeed: 2000,
+    scrollingSpeed: 200,
     easing: 'swing',
     loopBottom: false,
     loopTop: false,
@@ -139,7 +139,7 @@ $(document).ready(function () {
       position: 'right',
       tooltips: ['Intro', 'Our games', 'Manifesto', 'About us', 'Our values', 'Join us', 'Contact us']
     },
-    normalScrollElements: null,
+    normalScrollElements: '.tt-carousel-games',
     normalScrollElementTouchThreshold: 5,
     touchSensitivity: 10,
     keyboardScrolling: true,
@@ -165,20 +165,27 @@ $(document).ready(function () {
     loop: true,
     stagePadding: 40,
     responsive: {
-      0: {
-        items: 1
+      320: {
+        items: 1,
+        nav: false,
+        dots: false
       },
       600: {
-        items: 1,
-        nav: true,
+        items: 2,
+        nav: false,
         dots: false
       },
-      800: {
-        items: 4,
-        nav: true,
+      769: { // From 769 to sup
+        items: 2,
+        nav: false,
         dots: false
       },
-      2000: {
+      992: { // From 992 to sup
+        items: 3,
+        nav: false,
+        dots: false
+      },
+      1300: { // From 1300 to sup
         items: 4,
         dots: true,
         nav: true

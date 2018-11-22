@@ -1,3 +1,17 @@
+// Screen Res. utility
+
+.screen-res-indicator {
+    position: fixed;
+    z-index: 1000;
+    top: 10px;
+    left: 10px;
+    background-attachment: white;
+    color: black;
+    font-size: 20px;
+    width: 200px;
+    height: 100px;
+}
+
 // S-UI overrides
 .ui.container.container-main {
     height: 100%;
@@ -30,9 +44,12 @@
     //overflow: hidden;
 }
 
+// Header
 .ui.large.menu {
     @include responsive(mobile) {
         font-size: 1vw;
+        width: 100%;
+        margin: 1vw 0 4vw 0;
     }
 }
 
