@@ -99,11 +99,13 @@
             <div class="section-intro__illustration-background">
               <img class="section-intro__illustration-character section-intro__illustration-character--mobile"
                    src="images/jimmy.png"
+                   srcset="images/jimmy.png 1x, images/jimmy@2x.png 2x"
                    alt="Jimmy from Heir Of Love" />
             </div>
 
             <img class="section-intro__illustration-character section-intro__illustration-character--desktop"
                  src="images/jimmy.png"
+                 srcset="images/jimmy.png 1x, images/jimmy@2x.png 2x"
                  alt="Jimmy from Heir Of Love" />
 
             <div class="section-intro__speech-bubble">
@@ -142,7 +144,8 @@
                 <a href="https://twelvesignsoflove.stories.games"
                    class="tt-carousel-games__item-wrapper">
                   <img class="tt-carousel-games__cover"
-                       src="images/games/112_sign_game@2x.jpg"
+                       src="images/games/112_sign_game.jpg"
+                       srcset="images/games/112_sign_game.jpg 1x, images/games/112_sign_game@2x.jpg 2x"
                        alt="12 Signs of Loves" />
                   <div class="tt-carousel-games__dimmer"></div>
                   <div class="tt-carousel-games__informations">
@@ -153,7 +156,8 @@
                 <a href="https://ash.love-diaries.com"
                    class="tt-carousel-games__item-wrapper">
                   <img class="tt-carousel-games__cover"
-                       src="images/games/love&diaries_ash@2x.jpg"
+                       src="images/games/love&diaries_ash.jpg"
+                       srcset="images/games/love&diaries_ash.jpg 1x, images/games/love&diaries_ash@2x.jpg 2x"
                        alt="Love & Diaries: Ash" />
                   <div class="tt-carousel-games__dimmer"></div>
                   <div class="tt-carousel-games__informations">
@@ -164,7 +168,8 @@
                 <a href="https://summertrip.stories.games"
                    class="tt-carousel-games__item-wrapper">
                   <img class="tt-carousel-games__cover"
-                       src="images/games/summer_trip@2x.jpg"
+                       src="images/games/summer_trip.jpg"
+                       srcset="images/games/summer_trip.jpg 1x, images/games/summer_trip@2x.jpg 2x"
                        alt="Summer Trip" />
                   <div class="tt-carousel-games__dimmer"></div>
                   <div class="tt-carousel-games__informations">
@@ -175,7 +180,8 @@
                 <a href="https://patrick.love-diaries.com/"
                    class="tt-carousel-games__item-wrapper">
                   <img class="tt-carousel-games__cover"
-                       src="images/games/love&diaries_patrick@2x.jpg"
+                       src="images/games/love&diaries_patrick.jpg"
+                       srcset="images/games/love&diaries_patrick.jpg 1x, images/games/love&diaries_patrick@2x.jpg 2x"
                        alt="Love & Diaries: Patrick" />
                   <div class="tt-carousel-games__dimmer"></div>
                   <div class="tt-carousel-games__informations">
@@ -186,7 +192,8 @@
                 <a href="https://memoryhunter.stories.games/"
                    class="tt-carousel-games__item-wrapper">
                   <img class="tt-carousel-games__cover"
-                       src="images/games/memory_hunter@2x.jpg"
+                       src="images/games/memory_hunter.jpg"
+                       srcset="images/games/memory_hunter.jpg 1x, images/games/memory_hunter@2x.jpg 2x"
                        alt="Memory Hunter" />
                   <div class="tt-carousel-games__dimmer"></div>
                   <div class="tt-carousel-games__informations">
@@ -197,7 +204,8 @@
                 <a href="https://intensivecare.stories.games/"
                    class="tt-carousel-games__item-wrapper">
                   <img class="tt-carousel-games__cover"
-                       src="images/games/intensive_care.jpg@2x"
+                       src="images/games/intensive_care.jpg"
+                       srcset="images/games/intensive_care.jpg 1x, images/games/intensive_care@2x.jpg 2x"
                        alt="Intensive Care" />
                   <div class="tt-carousel-games__dimmer"></div>
                   <div class="tt-carousel-games__informations">
@@ -208,7 +216,8 @@
                 <a href="https://disloyalty.stories.games/"
                    class="tt-carousel-games__item-wrapper">
                   <img class="tt-carousel-games__cover"
-                       src="images/games/disloyalty.jpg@2x"
+                       src="images/games/disloyalty.jpg"
+                       srcset="images/games/disloyalty.jpg 1x, images/games/disloyalty@2x.jpg 2x"
                        alt="Disloyalty: Unfair Love" />
                   <div class="tt-carousel-games__dimmer"></div>
                   <div class="tt-carousel-games__informations">
@@ -219,7 +228,8 @@
                 <a href="https://lucas.love-diaries.com/"
                    class="tt-carousel-games__item-wrapper">
                   <img class="tt-carousel-games__cover"
-                       src="images/games/love&diaries_lucas.jpg@2x"
+                       src="images/games/love&diaries_lucas.jpg"
+                       srcset="images/games/love&diaries_lucas.jpg 1x, images/games/love&diaries_lucas@2x.jpg 2x"
                        alt="Love & Diaries: Lucas" />
                   <div class="tt-carousel-games__dimmer"></div>
                   <div class="tt-carousel-games__informations">
@@ -230,7 +240,8 @@
                 <a href="https://duncan.love-diaries.com/"
                    class="tt-carousel-games__item-wrapper">
                   <img class="tt-carousel-games__cover"
-                       src="images/games/love&diaries_duncan.jpg@2x"
+                       src="images/games/love&diaries_duncan.jpg"
+                       srcset="images/games/love&diaries_duncan.jpg 1x, images/games/love&diaries_duncan@2x.jpg 2x"
                        alt="Love & Diaries: Duncan" />
                   <div class="tt-carousel-games__dimmer"></div>
                   <div class="tt-carousel-games__informations">
@@ -241,7 +252,8 @@
                 <a href="https://www.thewinterkiss.com/"
                    class="tt-carousel-games__item-wrapper">
                   <img class="tt-carousel-games__cover"
-                       src="images/games/thewinterkiss.jpg@2x"
+                       src="images/games/thewinterkiss.jpg"
+                       srcset="images/games/thewinterkiss.jpg 1x, images/games/thewinterkiss@2x.jpg 2x"
                        alt="The winter kiss" />
                   <div class="tt-carousel-games__dimmer"></div>
                   <div class="tt-carousel-games__informations">
@@ -252,7 +264,8 @@
                 <a href="https://story-of-two-sisters.anticlove.com/"
                    class="tt-carousel-games__item-wrapper">
                   <img class="tt-carousel-games__cover"
-                       src="images/games/anticlove-sots.jpg@2x"
+                       src="images/games/anticlove-sots.jpg"
+                       srcset="images/games/anticlove-sots.jpg 1x, images/games/anticlove-sots@2x.jpg 2x"
                        alt="Anticlove: Story of two sisters" />
                   <div class="tt-carousel-games__dimmer"></div>
                   <div class="tt-carousel-games__informations">
@@ -263,7 +276,8 @@
                 <a href="https://aaron.love-diaries.com/"
                    class="tt-carousel-games__item-wrapper">
                   <img class="tt-carousel-games__cover"
-                       src="images/games/love&diaries.jpg@2x"
+                       src="images/games/love&diaries.jpg"
+                       srcset="images/games/love&diaries.jpg 1x, images/games/love&diaries@2x.jpg 2x"
                        alt="Love & Diaries: Aaron" />
                   <div class="tt-carousel-games__dimmer"></div>
                   <div class="tt-carousel-games__informations">
@@ -274,7 +288,8 @@
                 <a href="https://www.underlovestories.com/"
                    class="tt-carousel-games__item-wrapper">
                   <img class="tt-carousel-games__cover"
-                       src="images/games/underlovestories.jpg@2x"
+                       src="images/games/underlovestories.jpg"
+                       srcset="images/games/underlovestories.jpg 1x, images/games/underlovestories@2x.jpg 2x"
                        alt="Underlove Stories: Naomi" />
                   <div class="tt-carousel-games__dimmer"></div>
                   <div class="tt-carousel-games__informations">
@@ -285,7 +300,8 @@
                 <a href="https://www.risinglovers.com/"
                    class="tt-carousel-games__item-wrapper">
                   <img class="tt-carousel-games__cover"
-                       src="images/games/risinglovers.jpg@2x"
+                       src="images/games/risinglovers.jpg"
+                       srcset="images/games/risinglovers.jpg 1x, images/games/risinglovers@2x.jpg 2x"
                        alt="Risinglovers" />
                   <div class="tt-carousel-games__dimmer"></div>
                   <div class="tt-carousel-games__informations">
@@ -357,12 +373,14 @@
           <div class="sixteen wide tablet six wide computer seven wide large screen column column-main column-illustration">
             <div class="section-about-us__illustration-background">
               <img class="section-about-us__illustration-floating section-about-us__illustration-floating--mobile"
-                   src="images/mockup_app@2x.png"
+                   src="images/mockup_app.png"
+                   srcset="images/mockup_app.png 1x, images/mockup_app@2x.png 2x"
                    alt="Tictales app" />
             </div>
 
             <img class="section-about-us__illustration-floating"
-                 src="images/mockup_app@2x.png"
+                 src="images/mockup_app.png"
+                 srcset="images/mockup_app.png 1x, images/mockup_app@2x.png 2x"
                  alt="Tictales app" />
 
           </div>
@@ -389,7 +407,8 @@
               <div class="main-content__miscellaneous">
                 <div class="main-content__illustration-values">
                   <img class="main-content__illustration-characters"
-                     src="images/characters_group@2x.png"
+                     src="images/characters_group.png"
+                     srcset="images/characters_group.png 1x, images/characters_group@2x.png 2x"
                      alt="Tictales characters" />
                 </div>
               </div>

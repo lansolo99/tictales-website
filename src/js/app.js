@@ -8,7 +8,6 @@ $(document).ready(function () {
   let docHeight
   let currentScreen
 
-  // if (document.querySelectorAll('.all-tictales-sections').length) {
   // Containers refs vars
   let containerMainIntro = document.querySelector(
     '.section-intro .ui.container.container-main'
@@ -31,7 +30,6 @@ $(document).ready(function () {
   let containerContact = document.querySelector(
     '.section-contact-us .ui.container.container-main'
   )
-  // }
 
   let mainContentBaseMargins = 300
 

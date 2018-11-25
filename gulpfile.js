@@ -23,6 +23,8 @@ var rename = require('gulp-rename')
 var pump = require('pump')
 var iconfont = require('gulp-iconfont')
 var iconfontCss = require('gulp-iconfont-css')
+var retina = require('gulp-retina-workflow')
+var cssRetina = require('gulp-css-retina')
 
 // Iconfont
 var runTimestamp = Math.round(Date.now() / 1000)
@@ -31,6 +33,32 @@ var fontName = 'iconfont'
 // VARS
 
 var projectURL = 'localhost:8888'
+var retinaWorkflowOpts = {
+  flags: [{
+    suffix: '@1x',
+    scale: 1,
+    suffixOut: ''
+  },
+  {
+    suffix: '@2x',
+    scale: 2,
+    suffixOut: '@2x'
+  },
+  {
+    suffix: '@3x',
+    scale: 3,
+    suffixOut: '@3x'
+  },
+  {
+    suffix: '@4x',
+    scale: 4,
+    suffixOut: '@4x'
+  }
+  ],
+  extensions: ['jpg', 'jpeg', 'png'],
+  roundUp: true,
+  quality: 1
+}
 
 /// ///////////////////////////////////////////
 
@@ -182,6 +210,13 @@ gulp.task('iconfont', function () {
       formats: ['ttf', 'eot', 'woff', 'woff2']
     }))
     .pipe(gulp.dest('./src/fonts/icons/'))
+})
+
+// Retina workflow
+gulp.task('retina-workflow', function () {
+  return gulp.src('src/images/**/*')
+    .pipe(retina(retinaWorkflowOpts))
+    .pipe(gulp.dest('src/images'))
 })
 
 // Img Copy
