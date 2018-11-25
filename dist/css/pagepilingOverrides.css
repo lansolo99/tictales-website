@@ -1,0 +1,202 @@
+/*******************************
+             Mixins
+*******************************/
+/*!
+ * pagepiling.js 1.5.5
+ *
+ * https://github.com/alvarotrigo/pagePiling.js
+ * @license MIT licensed
+ *
+ * Copyright (C) 2016 alvarotrigo.com - A project by Alvaro Trigo
+ */
+html,
+body {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  /*Avoid flicker on slides transitions for mobile phones #336 */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.pp-section {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.pp-easing {
+  -webkit-transition: all 400ms cubic-bezier(0.55, 0.085, 0, 0.99);
+  -moz-transition: all 400ms cubic-bezier(0.55, 0.085, 0, 0.99);
+  -o-transition: all 400ms cubic-bezier(0.55, 0.085, 0, 0.99);
+  transition: all 400ms cubic-bezier(0.55, 0.085, 0, 0.99);
+  /* custom */
+  -webkit-transition-timing-function: cubic-bezier(0.55, 0.085, 0, 0.99);
+  -moz-transition-timing-function: cubic-bezier(0.55, 0.085, 0, 0.99);
+  -o-transition-timing-function: cubic-bezier(0.55, 0.085, 0, 0.99);
+  transition-timing-function: cubic-bezier(0.55, 0.085, 0, 0.99);
+  /* custom */
+}
+
+#pp-nav {
+  position: fixed;
+  z-index: 100;
+  margin-top: -32px;
+  top: 50%;
+  opacity: 1;
+}
+
+@media only screen and (max-width: 991px) {
+  #pp-nav {
+    display: none;
+  }
+}
+
+#pp-nav.right {
+  right: 30px;
+}
+
+#pp-nav.left {
+  left: 17px;
+}
+
+.pp-section.pp-table {
+  display: table;
+}
+
+.pp-tableCell {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+}
+
+.pp-slidesNav {
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  opacity: 1;
+}
+
+.pp-slidesNav.bottom {
+  bottom: 17px;
+}
+
+.pp-slidesNav.top {
+  top: 17px;
+}
+
+#pp-nav ul,
+.pp-slidesNav ul {
+  margin: 0;
+  padding: 0;
+}
+
+#pp-nav li,
+.pp-slidesNav li {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 7px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.pp-slidesNav li {
+  display: inline-block;
+  position: relative;
+}
+
+#pp-nav li a,
+.pp-slidesNav li a {
+  display: block;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#pp-nav li .active span,
+.pp-slidesNav .active span {
+  background: none;
+  opacity: 1;
+  border: 0px;
+}
+
+#pp-nav span,
+.pp-slidesNav span {
+  top: 2px;
+  left: 2px;
+  width: 8px;
+  height: 8px;
+  border: 0px;
+  opacity: 0.5;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+}
+
+#pp-nav span,
+.pp-slidesNav span {
+  -webkit-transition: opacity 0.5s, -webkit-transform 0.15s;
+  transition: opacity 0.5s, -webkit-transform 0.15s;
+  transition: opacity 0.5s, transform 0.15s;
+  transition: opacity 0.5s, transform 0.15s, -webkit-transform 0.15s;
+}
+
+#pp-nav span:before,
+.pp-slidesNav span:before {
+  color: white;
+  position: relative;
+  left: -3px;
+  top: -4px;
+  font-size: 20px;
+}
+
+#pp-nav span.tooltip {
+  position: absolute;
+  top: -4px;
+  left: -115px;
+  width: 100px;
+  color: white;
+  text-align: right;
+  border-radius: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  font-size: 14px;
+  -webkit-transform-origin: 50% right;
+          transform-origin: 50% right;
+}
+
+.pp-tooltip.right {
+  right: 20px;
+}
+
+.pp-tooltip.left {
+  left: 20px;
+}
+
+.pp-scrollable {
+  overflow-y: scroll;
+  height: 100%;
+}
+
+#pp-nav li:hover span.tooltip {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+#pp-nav li a:hover {
+  opacity: 1;
+}
+
+#pp-nav li a:hover span {
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGFnZXBpbGluZ092ZXJyaWRlcy5jc3MiLCJzb3VyY2VzIjpbInBhZ2VwaWxpbmdPdmVycmlkZXMuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7Z0NBRWdDO0FBNkNoQzs7Ozs7OztHQU9HO0FBQ0gsQUFBQSxJQUFJO0FBQ0osSUFBSSxDQUFDO0VBQ0QsUUFBUSxFQUFFLE1BQU07RUFDaEIsTUFBTSxFQUFFLENBQUM7RUFDVCxPQUFPLEVBQUUsQ0FBQztFQUVWLCtEQUErRDtFQUMvRCwyQkFBMkIsRUFBRSxnQkFBZ0I7Q0FDaEQ7O0FBRUQsQUFBQSxXQUFXLENBQUM7RUFDUixNQUFNLEVBQUUsSUFBSTtFQUNaLFFBQVEsRUFBRSxRQUFRO0VBQ2xCLEtBQUssRUFBRSxJQUFJO0NBQ2Q7O0FBRUQsQUFBQSxVQUFVLENBQUM7RUFDUCxrQkFBa0IsRUFBRSxHQUFHLENBQUMsS0FBSyxDQUFDLGtDQUF3QztFQUN0RSxlQUFlLEVBQUUsR0FBRyxDQUFDLEtBQUssQ0FBQyxrQ0FBd0M7RUFDbkUsYUFBYSxFQUFFLEdBQUcsQ0FBQyxLQUFLLENBQUMsa0NBQXdDO0VBQ2pFLFVBQVUsRUFBRSxHQUFHLENBQUMsS0FBSyxDQUFDLGtDQUF3QztFQUM5RCxZQUFZO0VBQ1osa0NBQWtDLEVBQUUsa0NBQXdDO0VBQzVFLCtCQUErQixFQUFFLGtDQUF3QztFQUN6RSw2QkFBNkIsRUFBRSxrQ0FBd0M7RUFDdkUsMEJBQTBCLEVBQUUsa0NBQXdDO0VBQ3BFLFlBQVk7Q0FDZjs7QUFFRCxBQUFBLE9BQU8sQ0FBQztFQUNKLFFBQVEsRUFBRSxLQUFLO0VBQ2YsT0FBTyxFQUFFLEdBQUc7RUFDWixVQUFVLEVBQUUsS0FBSztFQUNqQixHQUFHLEVBQUUsR0FBRztFQUNSLE9BQU8sRUFBRSxDQUFDO0NBS2I7O0FBMUVPLE1BQU0sTUFBTSxNQUFNLE1BQU0sU0FBUyxFQUFFLEtBQUs7RUFnRWhELEFBQUEsT0FBTyxDQUFDO0lBUUEsT0FBTyxFQUFFLElBQUk7R0FFcEI7OztB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 */
+
+/*# sourceMappingURL=pagepilingOverrides.css.map */

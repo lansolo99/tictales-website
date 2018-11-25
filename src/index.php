@@ -31,7 +31,7 @@
   <meta name="theme-color"
         content="#ffffff" />
 
-  <!-- build:css css/styles.css -->
+
   <link rel="stylesheet"
         type="text/css"
         href="semantic/dist/semantic.min.css" />
@@ -46,7 +46,7 @@
         href="css/style.css" />
   <link rel="stylesheet"
         href="css/pagepilingOverrides.css" />
-  <!-- endbuild -->
+
 </head>
 
 <body class="all-tictales-sections">
@@ -573,14 +573,12 @@
       </div>
     </div>
 
-    <!-- build:js js/app.js -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/enquire.min.js"></script>
     <script src="js/jquery.pagepiling.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="semantic/dist/semantic.min.js"></script>
     <script src="js/app.js"></script>
-    <!-- endbuild -->
 </body>
 
 </html>

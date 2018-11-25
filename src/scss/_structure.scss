@@ -967,13 +967,15 @@
     transition: transform 0.1s, color 0.1s;
     height: 50px;
     width: 130px;
+
+    &:hover {
+      box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.5);
+      transform: scale(1.07);
+      color: $color-tt-orange;
+    }
   }
 
-  &:hover {
-    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.5);
-    transform: scale(1.07);
-    color: $color-tt-orange;
-  }
+
 }
 
 .required.field.error {

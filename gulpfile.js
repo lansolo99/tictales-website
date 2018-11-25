@@ -15,10 +15,11 @@ var stripDebug = require('gulp-strip-debug')
 var strip = require('gulp-strip-comments')
 var stripCssComments = require('gulp-strip-css-comments')
 var removeHtmlComments = require('gulp-remove-html-comments')
-var imagemin = require('gulp-imagemin')
+var imagemin = require('gulp-tinypng')
 var useref = require('gulp-useref')
 var cleanCSS = require('gulp-clean-css')
 var uglify = require('gulp-uglify')
+var terser = require('gulp-terser')
 var rename = require('gulp-rename')
 var pump = require('pump')
 var iconfont = require('gulp-iconfont')
@@ -151,7 +152,6 @@ gulp.task('glyphicons', function () {
 })
 
 // WebPages copy
-
 gulp.task('webPagesCopy', function () {
   return gulp.src('src/*.{html,php}')
     .pipe(useref())
@@ -160,8 +160,25 @@ gulp.task('webPagesCopy', function () {
     .pipe(gulp.dest('dist/'))
 })
 
-// Minify CSS (from concatenated useref style.css)
+// CSS Copy
+gulp.task('cssCopy', () => {
+  return gulp.src(['src/css/*.css', '!src/css/*.css.map'])
+    .pipe(gulp.dest('dist/css'))
+})
 
+// CSS Copy
+gulp.task('semanticCopy', () => {
+  return gulp.src('src/semantic/dist/**/*')
+    .pipe(gulp.dest('dist/semantic/dist'))
+})
+
+// Composer copy
+gulp.task('composerCopy', () => {
+  return gulp.src('src/composer/**/*')
+    .pipe(gulp.dest('dist/composer/dist'))
+})
+
+// Minify CSS (from concatenated useref style.css)
 gulp.task('minify-css', () => {
   return gulp.src('dist/css/styles.css')
     .pipe(stripCssComments())
@@ -174,6 +191,12 @@ gulp.task('minify-css', () => {
     .pipe(gulp.dest('dist/css'))
 })
 
+// JS Copy
+gulp.task('jsCopy', function () {
+  return gulp.src('src/js/*')
+    .pipe(gulp.dest('dist/js'))
+})
+
 // Strip JS
 gulp.task('strip-js', function () {
   return gulp.src('dist/js/app.js')
@@ -183,15 +206,13 @@ gulp.task('strip-js', function () {
 })
 
 // Minimify JS
-gulp.task('minimify-js', function (cb) {
-  pump([
-    gulp.src('dist/js/app.js'),
-    uglify(),
-    gulp.dest('dist/js')
-  ],
-  cb
-  )
-})
+function es () {
+  return gulp.src('dist/js/app.js')
+    .pipe(terser())
+    .pipe(gulp.dest('dist/js/'))
+}
+
+gulp.task('minimify-js', es)
 
 // Icon font
 
@@ -220,26 +241,22 @@ gulp.task('retina-workflow', function () {
 })
 
 // Img Copy
-
 gulp.task('imgCopy', function () {
-  return gulp.src('src/images/*')
-    .pipe(imagemin())
+  return gulp.src('src/images/**/*')
+    .pipe(gulp.dest('dist/images'))
+})
+
+// Imgmin
+gulp.task('imgMin', function () {
+  gulp.src(['dist/images/**/*', '!dist/images/**/*.svg', '!dist/images/favicons/*', '!dist/images/icons/*'])
+    .pipe(imagemin('xyz7960IcsVcK4JsjkU96KtGS5xvdfhI'))
     .pipe(gulp.dest('dist/images'))
 })
 
 // Fonts copy
-
 gulp.task('fontsCopy', function () {
-  return gulp.src('src/fonts/*')
+  return gulp.src('src/fonts/**/*')
     .pipe(gulp.dest('dist/fonts'))
-})
-
-// JS Copy (jquery)
-
-gulp.task('jqueryCopy', function () {
-  // return gulp.src(['src/js/jquery-3.2.1.min.js','src/js/YouTubePopUp.jquery.js'])
-  return gulp.src('src/js/jquery-3.2.1.min.js')
-    .pipe(gulp.dest('dist/js'))
 })
 
 // Composer Copy
@@ -282,7 +299,7 @@ gulp.task('git-push', function () {
 
 // BUILD
 gulp.task('build', function (callback) {
-  runSequence('clean:dist', 'sass', 'webPagesCopy', 'minify-css', 'strip-js', 'minimify-js', 'jqueryCopy', 'imgCopy', 'fontsCopy', callback)
+  runSequence('clean:dist', 'sass', 'webPagesCopy', 'composerCopy', 'cssCopy', 'semanticCopy', 'minify-css', 'jsCopy', 'strip-js', 'minimify-js', 'imgCopy', 'fontsCopy', callback)
 })
 
 // REPO
