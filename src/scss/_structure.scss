@@ -15,6 +15,8 @@
     * - Section join us
     * - Section contact us
     * - Footer
+    * - Information pages
+    * - Loading screen
 */
 
 /*******************************
@@ -101,8 +103,6 @@
 
 // All Sections
 
-.tt-sections {}
-
 .column-main {
   &.icon:before {
     position: absolute;
@@ -133,13 +133,36 @@
   @include responsive(tablet) {
     width: 90%;
     top: auto;
-    margin-top: 40px;
+    margin-top: 100px;
+    margin-bottom: 150px;
     transform: none;
+  }
+
+  @include responsive(mobile) {
+    margin-top: 15vw;
+    margin-bottom: 15vw;
   }
 
   &__title {
     font-size: 70px;
     line-height: 70px;
+    position: relative;
+    top: 30px;
+    opacity: 0;
+    transition: top, opacity;
+    transition-duration: 0.4s;
+    transition-delay: 0.3s;
+    transition-timing-function: ease-out;
+
+    &.legals-pages {
+      top: 0px;
+      opacity: 1;
+    }
+
+    &.finalPosition {
+      top: 0px;
+      opacity: 1;
+    }
 
     @include responsive(mobile) {
       font-size: 46px;
@@ -152,6 +175,23 @@
     font-size: 22px;
     line-height: 32px;
     color: white;
+    position: relative;
+    top: 30px;
+    opacity: 0;
+    transition: top, opacity;
+    transition-duration: 0.4s;
+    transition-delay: 0.35s;
+    transition-timing-function: ease-out;
+
+    .main-content__plain-text {
+      opacity: 1;
+      top: 0;
+    }
+
+    &.finalPosition {
+      top: 0px;
+      opacity: 1;
+    }
 
     @include responsive(mobile) {
       font-size: 19px;
@@ -161,6 +201,24 @@
     &--small {
       font-size: 18px;
       line-height: 24px;
+    }
+  }
+
+  &__miscellaneous {
+    position: relative;
+    top: 30px;
+    opacity: 0;
+    position: relative;
+    top: 30px;
+    opacity: 0;
+    transition: top, opacity;
+    transition-duration: 0.4s;
+    transition-delay: 0.45s;
+    transition-timing-function: ease-out;
+
+    &.finalPosition {
+      top: 0px;
+      opacity: 1;
     }
   }
 }
@@ -192,6 +250,7 @@
 
     @include responsive(tablet) {
       width: 85%;
+      margin-bottom: 150px;
     }
 
     @include responsive(mobile) {
@@ -222,11 +281,26 @@
   &__illustration-character {
     position: absolute;
     bottom: 0;
-    right: -10px;
+    right: 50px;
     width: 220px;
+    opacity: 0;
+    transition: right, opacity;
+    transition-duration: 0.5s;
+    transition-delay: 0.7s;
+    transition-timing-function: ease-in-out;
+
+    &.final-position {
+      right: -10px;
+      opacity: 1;
+    }
 
     @include responsive(computer) {
-      right: -40px;
+      right: 20px;
+
+      &.final-position {
+        right: -40px;
+        opacity: 1;
+      }
     }
 
     @include responsive(tablet) {
@@ -239,14 +313,24 @@
       @include responsive(tablet) {
         display: block;
         bottom: -70px;
-        right: 110px;
+        right: 180px;
+
+        &.final-position {
+          right: 110px;
+          opacity: 1;
+        }
       }
 
       @include responsive(mobile) {
         width: 40vw;
         bottom: auto;
-        top: 20vw;
-        right: 10vw;
+        top: 30vw;
+        right: 20vw;
+
+        &.final-position {
+          right: 10vw;
+          opacity: 1;
+        }
       }
     }
   }
@@ -260,7 +344,18 @@
     border-radius: 0.4em;
     font-size: 18px;
     line-height: 1.5em;
+    transform: scale(0);
+    opacity: 0;
     box-shadow: 2px 2px 4px 0px rgba(black, 0.3);
+    transition: transform, opacity;
+    transition-duration: 0.5s;
+    transition-delay: 0.9s;
+    transition-timing-function: cubic-bezier(0.75, -0.5, 0, 1.75);
+
+    &.final-position {
+      transform: scale(1);
+      opacity: 1;
+    }
 
     @include responsive(computer) {
       right: 100px;
@@ -341,7 +436,6 @@
   }
 
   .owl-nav {
-
     button.owl-prev,
     button.owl-next {
       position: absolute;
@@ -357,7 +451,6 @@
       @include responsive(tablet) {
         display: none;
       }
-
 
       @include responsive(mobile) {
         width: 10vw;
@@ -478,12 +571,15 @@
     text-align: justify;
     width: 85%;
 
+    @include responsive(mobile) {
+      text-align: left;
+    }
+
     &__tictales-logo {
       width: 100px;
     }
 
     &__signature {
-
       margin-top: 40px;
 
       img,
@@ -496,10 +592,8 @@
         position: relative;
         top: 5px;
       }
-
     }
   }
-
 
   &__illustration-background {
     width: 100%;
@@ -520,7 +614,6 @@
   }
 }
 
-
 // Section About us
 
 .section-about-us {
@@ -538,7 +631,6 @@
       margin-bottom: 15vw;
     }
   }
-
 
   &__illustration-background {
     width: 100%;
@@ -584,7 +676,6 @@
         left: 50%;
         width: 35vw;
         transform: translateX(-50%) translateY(-20vw);
-
       }
     }
   }
@@ -594,10 +685,7 @@
       color: black;
     }
   }
-
 }
-
-
 
 // Section Our values
 
@@ -615,10 +703,10 @@
     position: relative;
 
     // Added center vertically
-    //  top: 50%;
-    //  transform: translateY(-50%);
-    //  margin-top: 0;
-    //  margin-bottom: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 50px;
+    margin-bottom: 50px;
 
     &__illustration-values {
       width: 100%;
@@ -628,7 +716,7 @@
       margin-top: 200px;
       height: 180px;
       display: block;
-      background-image: url('../images/backgrounds/pond_desktop@2x.jpg');
+      background-image: url("../images/backgrounds/pond_desktop@2x.jpg");
       background-size: cover;
       background-position: center;
       position: relative;
@@ -675,29 +763,23 @@
   }
 }
 
-
 // Section Join us
 
 .section-join-us {
   background: $color-tt-blue;
 
   .main-content {
-
     @include responsive(mobile) {
       margin-top: 30vw;
       margin-bottom: 50vw;
     }
-
   }
-
 }
 
 .job-board {
-
   width: 90%;
   margin: auto;
   margin-top: 50px;
-
 
   &__title {
     font-size: 26px;
@@ -767,28 +849,72 @@
       }
     }
   }
-
 }
-
 
 // Section Contact us
 
 .section-contact-us {
   background: $color-tt-orange;
+
+  .main-content {
+    transition: height 0.2s;
+
+    &__feedback {
+      margin-top: 50px;
+      display: none;
+      opacity: 0;
+      transition: opacity 1s;
+
+      &.statusVisible {
+        display: block;
+        opacity: 1;
+      }
+    }
+  }
+
+  .feedback-message {
+    &__title {
+      font-size: 35px;
+    }
+
+    &__message {
+      font-size: 18px;
+    }
+
+    color: white;
+  }
 }
 
 .ui.inverted.form.contact-form {
   width: 100%;
   margin: auto;
   margin-top: 50px;
-  margin-bottom: 100px;
+  margin-bottom: 0px;
   text-align: left;
+
+  .field.field input:-webkit-autofill {
+    background-color: black !important;
+  }
+
+  .column-message {
+    margin-top: 20px !important;
+  }
+
+  @include responsive(mobile) {
+    .ui.stackable.grid > .wide.column {
+      margin-top: 20px !important;
+    }
+  }
+
+  // .main-content {
+  //   margin-bottom: 0;
+  // }
 
   .field {
     text-align: left;
     color: white;
 
-    >label {
+    > label {
       font-size: 18px !important;
       font-weight: 300 !important;
 
@@ -803,51 +929,89 @@
       font-family: $headerFont;
       font-size: 30px;
       border: none;
-      border-bottom: 1px solid white;
+      border-bottom: 1px solid rgba(white, 0.5);
       color: white;
       padding-left: 0;
       padding-top: 10px;
       padding-bottom: 5px;
       border-radius: 0;
+      transition: border 0.2s;
 
       &::placeholder {
         color: rgba(white, 0.5);
       }
 
       &:focus-within {
-        border-bottom: 3px solid white;
+        border-bottom: 3px solid rgba(white, 1);
       }
     }
-
-    textarea {}
   }
 
   .ui.button.contact-form__submit {
     background-color: white !important;
     color: black;
-    margin-top: 20px;
+    margin-top: 40px;
     margin-bottom: 50px;
     transition: transform 0.1s, color 0.1s;
+    height: 50px;
+    width: 130px;
+
+    &.loading {
+      // .submit-loader {
+      //   display: inline-block;
+      //   margin: 0;
+      // }
+    }
 
     &:hover {
-      box-shadow: 0 0 4px 0 rgba(0, 0, 0, .5);
+      box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.5);
       transform: scale(1.07);
       color: $color-tt-orange;
     }
   }
+
+  .required.field.error {
+    position: relative;
+  }
+
+  .field.error {
+    label {
+      color: white;
+    }
+  }
+
+  .pointing.prompt {
+    position: absolute;
+    bottom: -25px;
+    left: 0;
+    background-color: transparent !important;
+    border: none !important;
+    color: white !important;
+    opacity: 0.8;
+    font-size: 14px;
+  }
 }
 
-
+.submit-loader {
+  margin: 0 0 2em;
+  text-align: center;
+  padding: 0;
+  margin: 10px auto 1em;
+  display: none;
+  vertical-align: top;
+}
 
 /*******************************
-           Footer
+             Footer
 *******************************/
 
 .tt-footer {
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
-  left: 15px;
+  // position: absolute;
+  // bottom: 15px;
+  // right: 15px;
+  // left: 15px;
+  width: 100%;
+  margin-bottom: 15px;
   background-color: black;
   height: 50px;
   display: flex;
@@ -904,7 +1068,6 @@
       }
     }
 
-
     &:not(:first-child) {
       border-left: 1px solid rgba($color-tt-grey-footer, 0.5);
 
@@ -920,7 +1083,160 @@
   }
 }
 
+/*******************************
+        Information pages
+*******************************/
 
+.infos_pages {
+  h3 {
+    font-size: 24px;
+  }
+
+  .social-menu {
+    a {
+      &:hover {
+        color: $color-tt-orange;
+      }
+    }
+  }
+
+  .main-content {
+    width: 80%;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    top: auto;
+    transform: none;
+
+    @include responsive(mobile) {
+      margin-top: 60px;
+    }
+
+    &__title {
+      margin-bottom: 50px;
+      text-align: center;
+    }
+
+    h3 {
+      text-align: left;
+      margin-top: 50px;
+    }
+
+    p {
+      color: black;
+      font-size: 18px;
+      line-height: 1.4em;
+      text-align: justify;
+
+      a {
+        color: $color-tt-orange;
+      }
+    }
+  }
+
+  .tt-footer {
+    position: static;
+    width: 100%;
+  }
+}
+
+/*******************************
+        Loading screen
+*******************************/
+
+.loading-screen {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+  opacity: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $color-tt-orange;
+  color: white;
+  transition: opacity 0.7s ease-in-out;
+
+  &.loaded {
+    opacity: 0;
+    pointer-events: none;
+
+    .spinner {
+      opacity: 0;
+    }
+  }
+
+  .centered-prompt {
+    display: block;
+
+    svg rect {
+      fill: white;
+    }
+  }
+
+  .spinner {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    margin: 100px auto;
+    transition: opacity 0.4s ease-out;
+
+    .load-exp1,
+    .load-exp2,
+    .load-exp3,
+    .load-exp4 {
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      left: 0;
+      animation: a-shapes 2.5s infinite ease;
+      transform: scale(0, 0) rotateZ(180deg);
+    }
+
+    .load-exp1 {
+      animation-delay: 0s;
+    }
+
+    .load-exp2 {
+      animation-delay: 0.625s;
+    }
+
+    .load-exp3 {
+      animation-delay: 1.25s;
+    }
+
+    .load-exp4 {
+      animation-delay: 1.875s;
+    }
+
+    @keyframes a-shapes {
+      0% {
+        transform: scale(0, 0) rotateZ(-90deg);
+        opacity: 0;
+      }
+
+      6% {
+        transform: scale(1, 1) rotateZ(0deg);
+        opacity: 1;
+      }
+
+      13% {
+        transform: scale(1, 1) rotateZ(0deg);
+        opacity: 1;
+      }
+
+      25% {
+        transform: scale(0, 0) rotateZ(90deg);
+        opacity: 0;
+      }
+    }
+  }
+}
 
 /*******************************
           Identifying

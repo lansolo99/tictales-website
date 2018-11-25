@@ -78,14 +78,14 @@ gulp.task('browserSync', function () {
   browserSync.init({
 
     // Dynamic (use with mamp)
-    // proxy: 'localhost:8888',
+    proxy: 'localhost:8888',
 
     // Static
-    server: {
-      baseDir: './src'
-      // baseDir: "./src/testbpiframe/"
+    // server: {
+    //   baseDir: './src'
+    //   // baseDir: "./src/testbpiframe/"
 
-    },
+    // },
 
     open: true,
     injectChanges: true,
@@ -98,6 +98,7 @@ gulp.task('browserSync', function () {
 gulp.task('watch', ['sass'], function (done) {
   gulp.watch('src/scss/**/*.scss', ['sass'])
   gulp.watch('src/*.html', browserSync.reload)
+  gulp.watch('src/*.php', browserSync.reload)
   gulp.watch('src/js/**/*.js', browserSync.reload)
   done()
 })

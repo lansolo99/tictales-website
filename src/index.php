@@ -39,20 +39,23 @@
         href="css/owl.carousel.min.css" />
   <link rel="stylesheet"
         href="css/owl.theme.default.min.css" />
-
   <link rel="stylesheet"
         href="css/jquery.pagepiling.css" />
   <link rel="stylesheet"
         type="text/css"
         href="css/style.css" />
+  <link rel="stylesheet"
+        href="css/pagepilingOverrides.css" />
   <!-- endbuild -->
 </head>
 
-<body>
+<body class="all-tictales-sections">
 
-  <div class="screen-res-indicator">
+
+
+  <!-- <div class="screen-res-indicator">
     test
-  </div>
+  </div> -->
 
   <div id="pagepiling">
 
@@ -92,14 +95,14 @@
           </ul>
         </div>
         <div class="ui stackable grid grid-main">
-          <div class="sixteen wide tablet six wide computer seven wide large screen column column-main">
+          <div class="sixteen wide tablet six wide computer seven wide large screen column column-main column-illustration">
             <div class="section-intro__illustration-background">
               <img class="section-intro__illustration-character section-intro__illustration-character--mobile"
                    src="images/jimmy.png"
                    alt="Jimmy from Heir Of Love" />
             </div>
 
-            <img class="section-intro__illustration-character"
+            <img class="section-intro__illustration-character section-intro__illustration-character--desktop"
                  src="images/jimmy.png"
                  alt="Jimmy from Heir Of Love" />
 
@@ -116,6 +119,7 @@
                 order to entertain and push the limits of interactive
                 storytelling.
               </p>
+
             </div>
             <div class="column-main__follow icon icon-follow"></div>
           </div>
@@ -133,7 +137,7 @@
               <p class="main-content__plain-text">We are creators of original stories and franchises that adapt
                 and personalize to the player’s choices.
               </p>
-
+              <div class="main-content__miscellaneous">
               <div class="owl-carousel tt-carousel-games">
                 <a href="https://twelvesignsoflove.stories.games"
                    class="tt-carousel-games__item-wrapper">
@@ -290,6 +294,7 @@
                   </div>
                 </a>
               </div>
+              </div>
             </div>
           </div>
         </div>
@@ -304,10 +309,12 @@
           <div class="sixteen wide tablet ten wide computer nine wide large screen column column-main icon icon-exp1">
             <div class="tt-sections__main-content main-content">
               <h2 class="main-content__title">Manifesto</h2>
+              <div class="main-content__plain-text">
               <p class="main-content__plain-text">Quel coeur n'a jamais battu au son d'une grande histoire ? Les
                 histoires de héros, de princes ou de princesses, de monstres à terrasser, de compagnons et
                 d'adversaires. Qui ne s'est jamais passionné pour ces aventures imaginaires ? Les grandes histoires
-                nous inspirent, nous délivrent du quotidien, nous attrapent par la main et nous emmènent loin d'ici. Et
+                nous inspirent, nous délivrent du quotidien, nous attrapent par la main et nous emmènent loin d'ici.
+                Et
                 si jusqu’ici prendre part à ces grandes histoires n’était qu’un rêve, sachez que vous le touchez du
                 bout du doigt. </p>
               <p class="main-content__plain-text main-content__plain-text--small">
@@ -316,10 +323,13 @@
                 importantes et leurs conséquences vous appartiennent, partout, à tout moment.
               </p>
               <p class="main-content__plain-text main-content__plain-text--small">
-                Saisi(e) par la passion, vous tomberez réellement amoureux. Intercepté(e) par le danger, vous craindrez
+                Saisi(e) par la passion, vous tomberez réellement amoureux. Intercepté(e) par le danger, vous
+                craindrez
                 pour votre vie. Envahi(e) par le suspense, vous ne dormirez plus la nuit. Téléchargez une histoire
                 tictales, et laissez vous prendre au jeu.
               </p>
+              </div>
+
               <div class="main-content__signature">
                 <img class="main-content__tictales-logo"
                      src="images/tictales_logo_white.svg"
@@ -344,7 +354,7 @@
     <div class="section pp-scrollable section-about-us tt-sections">
       <div class="ui container container-main">
         <div class="ui stackable grid grid-main">
-          <div class="sixteen wide tablet six wide computer seven wide large screen column column-main">
+          <div class="sixteen wide tablet six wide computer seven wide large screen column column-main column-illustration">
             <div class="section-about-us__illustration-background">
               <img class="section-about-us__illustration-floating section-about-us__illustration-floating--mobile"
                    src="images/mockup_app@2x.png"
@@ -359,7 +369,8 @@
           <div class="sixteen wide tablet ten wide computer nine wide large screen column column-main icon icon-exp4">
             <div class="tt-sections__main-content main-content">
               <h2 class="main-content__title">About us</h2>
-              <p class="main-content__plain-text">Our mission is to create great stories in order to entertain and push
+              <p class="main-content__plain-text">Our mission is to create great stories in order to entertain and
+                push
                 the limits of interactive storytelling.</p>
             </div>
           </div>
@@ -375,10 +386,12 @@
             <div class="tt-sections__main-content main-content">
               <h2 class="main-content__title">Our values</h2>
               <p class="main-content__plain-text">Create stories that build true emotion within the reader.</p>
-              <div class="main-content__illustration-values">
-                <img class="main-content__illustration-characters"
+              <div class="main-content__miscellaneous">
+                <div class="main-content__illustration-values">
+                  <img class="main-content__illustration-characters"
                      src="images/characters_group@2x.png"
                      alt="Tictales characters" />
+                </div>
               </div>
             </div>
           </div>
@@ -396,6 +409,7 @@
               <p class="main-content__plain-text">We’re always looking for talented, passionate story designers,
                 strategists, and marketers to join our team of creative and technical experts. Work with great people
                 and build amazing products.</p>
+              <div class="main-content__miscellaneous">
               <div class="main-content__job-board job-board">
                 <h3 class="job-board__title">Current jobs openings</h3>
                 <ul>
@@ -429,6 +443,7 @@
                 </ul>
               </div>
             </div>
+            </div>
           </div>
         </div>
       </div>
@@ -441,34 +456,46 @@
           <div class="sixteen wide column column-main icon icon-exp7">
             <div class="tt-sections__main-content main-content">
               <h2 class="main-content__title">Contact us</h2>
-              <form class="main-content__contact-form contact-form ui inverted form">
+              <div class="main-content__miscellaneous">
+              <div class="main-content__feedback feedback-message">
+                <h3 class="feedback-message__title">Thank you !</h3>
+                <p class="feedback-message__message">Your message has been successfully sent.<br/>We will contact you very soon!</p>
+              </div>
+              <form class="main-content__contact-form contact-form ui inverted form"
+                    method="post"
+                    role="form">
                 <div class="ui stackable grid">
                   <div class="eight wide column">
                     <div class="required field">
-                      <label>Your name</label>
+                      <label>Name</label>
                       <input type="text"
-                             name="first-name"
-                             placeholder="">
+                             name="name"
+                             placeholder="Your name">
                     </div>
                   </div>
                   <div class="eight wide column">
                     <div class="required field">
-                      <label>Your email</label>
-                      <input type="text"
-                             name="first-name"
-                             placeholder="">
+                      <label>Email</label>
+                      <input type="email"
+                             name="email"
+                             placeholder="Your email">
                     </div>
                   </div>
-                  <div class="sixteen wide column">
+                  <div class="sixteen wide column column-message">
                     <div class="required field">
-                      <label>Your message</label>
-                      <textarea rows="2"></textarea>
+                      <label>Message</label>
+                      <textarea name="message"
+                                rows="2"
+                                placeholder="Your message..."></textarea>
                     </div>
                     <button class="ui button contact-form__submit"
-                            type="submit">Send</button>
+                            type="submit"><span>Send</span>
+                            </div>
+                          </button>
                   </div>
 
               </form>
+            </div>
             </div>
             <!-- end main content -->
 
@@ -482,6 +509,8 @@
 
       </div>
       <!-- end ui container -->
+
+
       <footer class="tt-footer">
         <a href="#intro">
           <div class="tt-footer__logo">
@@ -491,13 +520,13 @@
         </a>
         <ul class="tt-footer__content-info content-info">
           <li class="content-info__item">
-            <a href="#">Legal information</a>
+            <a href="legales.html">Legal information</a>
           </li>
           <li class="content-info__item">
-            <a href="#">Terms & Conditions</a>
+            <a href="terms-and-conditions.html">Terms & Conditions</a>
           </li>
           <li class="content-info__item">
-            <a href="#">Privacy Policy </a>
+            <a href="privacy-policy.html">Privacy Policy </a>
           </li>
 
         </ul>
@@ -506,14 +535,33 @@
     <!-- end contact-us -->
   </div>
 
-  <!-- build:js js/app.js -->
-  <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/enquire.min.js"></script>
-  <script src="js/jquery.pagepiling.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="semantic/dist/semantic.min.js"></script>
-  <script src="js/app.js"></script>
-  <!-- endbuild -->
+
+  <!-- LOADING SCREEN -->
+  <div class="loading-screen">
+    <div class="centered-prompt">
+      <!-- Loader -->
+      <div class="loader loader--style8">
+        <div class="spinner">
+          <img class="load-exp1"
+               src="images/icons/exp1.svg">
+          <img class="load-exp2"
+               src="images/icons/exp2.svg">
+          <img class="load-exp3"
+               src="images/icons/exp3.svg">
+          <img class="load-exp4"
+               src="images/icons/exp7.svg">
+        </div>
+      </div>
+    </div>
+
+    <!-- build:js js/app.js -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/enquire.min.js"></script>
+    <script src="js/jquery.pagepiling.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="semantic/dist/semantic.min.js"></script>
+    <script src="js/app.js"></script>
+    <!-- endbuild -->
 </body>
 
 </html>

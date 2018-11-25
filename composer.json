@@ -1,0 +1,8 @@
+{
+  "config": {
+    "vendor-dir": "src/composer"
+  },
+  "require": {
+    "sendgrid/sendgrid": "~7"
+  }
+}

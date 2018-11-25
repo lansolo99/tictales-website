@@ -1,3 +1,50 @@
+/*******************************
+             Mixins
+*******************************/
+
+// S-UI Breakpoints :
+// @mobileBreakpoint            : 320px; (... ->767)
+// @tabletBreakpoint            : 768px; (... -> 991)
+// @computerBreakpoint          : 992px; (... -> 1299)
+// @largeMonitorBreakpoint      : 1300px; (... -> 1919)
+// @widescreenMonitorBreakpoint : 1920px; (1920 -> ...)
+
+//Responsive breakpoints
+@mixin responsive($width) {
+    @if $width==mobile {
+        @media only screen and (max-width: 767px) {
+            @content;
+        }
+    }
+
+    @else if $width==tablet {
+        @media only screen and (max-width: 991px) {
+            @content;
+        }
+    }
+
+    @else if $width==computer {
+        @media only screen and (max-width: 1299px) {
+            @content;
+        }
+    }
+
+    @else if $width==largeMonitor {
+        @media only screen and (max-width: 1919px) {
+            @content;
+        }
+    }
+
+    @else if $width==widescreen {
+        @media only screen and (min-width: 1920px) {
+            @content;
+        }
+    }
+}
+
+
+
+
 /*!
  * pagepiling.js 1.5.5
  *
@@ -42,7 +89,7 @@ body {
     top: 50%;
     opacity: 1;
 
-    @include responsive(mobile) {
+    @include responsive(tablet) {
         display: none;
     }
 }
@@ -175,8 +222,10 @@ body {
 
 .pp-scrollable {
     overflow-y: scroll;
+    //-webkit-overflow-scrolling: touch;
     height: 100%;
 }
+
 
 #pp-nav li:hover {
     span.tooltip {
@@ -184,6 +233,8 @@ body {
         transform: scale(1);
     }
 }
+
+
 
 #pp-nav li a:hover {
     opacity: 1;
