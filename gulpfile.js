@@ -246,11 +246,11 @@ gulp.task('imgCopy', function () {
     .pipe(gulp.dest('dist/images'))
 })
 
-// Imgmin
+// Imgmin (to execute once -> limited amount of usage (500/month))
 gulp.task('imgMin', function () {
-  gulp.src(['dist/images/**/*', '!dist/images/**/*.svg', '!dist/images/favicons/*', '!dist/images/icons/*'])
+  gulp.src(['src/images/**/*', '!src/images/**/*.svg', '!src/images/favicons/*', '!src/images/icons/*'])
     .pipe(imagemin('xyz7960IcsVcK4JsjkU96KtGS5xvdfhI'))
-    .pipe(gulp.dest('dist/images'))
+    .pipe(gulp.dest('src/images'))
 })
 
 // Fonts copy
