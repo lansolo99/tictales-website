@@ -333,13 +333,13 @@ $(document).ready(function () {
   // Handle form
   const handleForm = () => {
     console.log('handleForm')
+    event.preventDefault()
 
     if ($('.main-content__contact-form').form('is valid')) {
       // Loader display
       $('.contact-form__submit span').css('display', 'none')
       $('.contact-form__submit').addClass('loading')
 
-      event.preventDefault()
       let url = 'contact.php'
       let contactFormElement = $('.ui.form')
 
