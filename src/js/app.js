@@ -130,7 +130,7 @@ $(document).ready(function () {
       containerManifesto.style.minHeight = contentHeightManifesto + 'px'
       containerAboutUs.style.minHeight = contentHeightAboutUs + 'px'
       containerOurValues.style.minHeight = contentHeightOurValues + 'px'
-      containerJoinUs.style.minHeight = contentHeightJoinUs + 'px'
+      // containerJoinUs.style.minHeight = contentHeightJoinUs + 'px'
       containerContact.style.minHeight = contentHeightContact + 'px'
     }
 
@@ -156,7 +156,6 @@ $(document).ready(function () {
         'manifesto',
         'about-us',
         'our-values',
-        'join-us',
         'contact-us'
       ],
       menu: null,
@@ -178,7 +177,6 @@ $(document).ready(function () {
           'Manifesto',
           'About us',
           'Our values',
-          'Join us',
           'Contact us'
         ]
       },
@@ -261,7 +259,6 @@ $(document).ready(function () {
     'icon-exp3',
     'icon-exp4',
     'icon-exp5',
-    'icon-exp6',
     'icon-exp7'
   ]
   let allSpanInBullet = document.querySelectorAll('#pp-nav li a span.icon')
