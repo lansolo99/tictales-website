@@ -130,6 +130,10 @@
   top: 50%;
   transform: translateY(-50%);
 
+  &--wrapper{
+    width: 100%;
+  }
+
   @include responsive(tablet) {
     width: 90%;
     top: auto;
@@ -183,6 +187,10 @@
     transition-delay: 0.35s;
     transition-timing-function: ease-out;
 
+    &--wrapper{
+      width: 100% !important;
+    }
+
     strong {
       font-weight: 600;
     }
@@ -201,6 +209,7 @@
       font-size: 19px;
       line-height: 28px;
     }
+
 
     &--small {
       font-size: 18px;
@@ -230,6 +239,8 @@
       opacity: 1;
     }
   }
+
+
 }
 
 // Section intro
@@ -589,7 +600,7 @@
     width: 85%;
 
     @include responsive(mobile) {
-      text-align: left;
+      text-align: center;
     }
 
     &__tictales-logo {
