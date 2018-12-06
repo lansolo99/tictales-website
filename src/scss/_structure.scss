@@ -450,6 +450,10 @@
       width: 80%;
       margin: auto;
       margin-bottom: 2em;
+
+      @include responsive(mobile){
+        width: 100% !important;
+      }
     }
   }
 }
@@ -793,6 +797,10 @@
       width: 80%;
       margin: auto;
       margin-bottom: 2em;
+
+      @include responsive(mobile){
+        width: 100% !important;
+      }
     }
   }
 }
