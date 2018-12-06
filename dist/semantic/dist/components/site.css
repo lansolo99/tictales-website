@@ -13,7 +13,7 @@
              Page
 *******************************/
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,300italic&subset=latin');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,300italic,500&subset=latin');
 html,
 body {
   height: 100%;
@@ -212,4 +212,7 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
   src: url("../../fonts/TradeGothicLTStd-BdCn20.woff2") format("woff2"), url("../../fonts/TradeGothicLTStd-BdCn20.woff") format("woff");
   font-weight: bold;
   font-style: normal;
+}
+body {
+  font-weight: 300;
 }

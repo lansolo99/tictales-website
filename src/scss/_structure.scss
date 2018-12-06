@@ -183,6 +183,10 @@
     transition-delay: 0.35s;
     transition-timing-function: ease-out;
 
+    strong {
+      font-weight: 600;
+    }
+
     .main-content__plain-text {
       opacity: 1;
       top: 0;
@@ -200,6 +204,11 @@
 
     &--small {
       font-size: 18px;
+      line-height: 24px;
+    }
+
+    &--big {
+      font-size: 24px;
       line-height: 24px;
     }
   }
@@ -344,6 +353,7 @@
     position: absolute;
     bottom: 350px;
     right: 140px;
+    text-align: center;
     padding: 15px 30px;
     background: white;
     border-radius: 0.4em;
@@ -975,8 +985,6 @@
       color: $color-tt-orange;
     }
   }
-
-
 }
 
 .required.field.error {
@@ -999,7 +1007,6 @@
   opacity: 0.8;
   font-size: 14px;
 }
-
 
 .submit-loader {
   margin: 0 0 2em;

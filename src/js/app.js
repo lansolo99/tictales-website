@@ -173,7 +173,7 @@ $(document).ready(function () {
         position: 'right',
         tooltips: [
           'Intro',
-          'Our games',
+          'Our apps',
           'Manifesto',
           'About us',
           'Our values',
