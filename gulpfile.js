@@ -129,14 +129,12 @@ gulp.task('sass', function () {
 gulp.task('browserSync', function () {
   browserSync.init({
     // Dynamic (use with mamp)
-    // proxy: 'localhost:8888',
+    proxy: 'localhost:8888',
 
     // Static
-    server: {
-      baseDir: './src'
-      // baseDir: './src'
-      // baseDir: "./src/testbpiframe/"
-    },
+    // server: {
+    //   baseDir: './src'
+    // },
 
     open: true,
     injectChanges: true,
