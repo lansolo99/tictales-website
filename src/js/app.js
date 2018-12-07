@@ -43,6 +43,20 @@ $(document).ready(function () {
   let contentHeightContact
 
   /*******************************
+           Webp handling
+   *******************************/
+
+  if (document.querySelectorAll('html.webp').length) {
+    if (document.querySelectorAll('.section-intro').length) {
+      document.querySelector('.section-intro__illustration-background').classList.add('webp')
+    }
+  } else {
+    if (document.querySelectorAll('.section-intro').length) {
+      document.querySelector('.section-intro__illustration-background').classList.add('no-webp')
+    }
+  }
+
+  /*******************************
             Enquire.js
   *******************************/
 

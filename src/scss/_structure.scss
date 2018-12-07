@@ -130,7 +130,7 @@
   top: 50%;
   transform: translateY(-50%);
 
-  &--wrapper{
+  &--wrapper {
     width: 100%;
   }
 
@@ -187,7 +187,7 @@
     transition-delay: 0.35s;
     transition-timing-function: ease-out;
 
-    &--wrapper{
+    &--wrapper {
       width: 100% !important;
     }
 
@@ -209,7 +209,6 @@
       font-size: 19px;
       line-height: 28px;
     }
-
 
     &--small {
       font-size: 18px;
@@ -239,8 +238,6 @@
       opacity: 1;
     }
   }
-
-
 }
 
 // Section intro
@@ -282,9 +279,22 @@
     width: 100%;
     height: 100%;
     background-size: cover;
-    background-image: url(../images/backgrounds/homepage_paris.jpg);
-    background-image: -webkit-image-set(url(../images/backgrounds/homepage_paris.jpg) 1x,
-      url(../images/backgrounds/homepage_paris@2x.jpg) 2x);
+
+    &.webp {
+      background-image: url(../images/backgrounds/homepage_paris.jpg);
+      background-image: -webkit-image-set(
+        url(../images/backgrounds/homepage_paris.webp) 1x,
+        url(../images/backgrounds/homepage_paris@2x.webp) 2x
+      );
+    }
+
+    &.no-webp {
+      background-image: url(../images/backgrounds/homepage_paris.jpg);
+      background-image: -webkit-image-set(
+        url(../images/backgrounds/homepage_paris.jpg) 1x,
+        url(../images/backgrounds/homepage_paris@2x.jpg) 2x
+      );
+    }
 
     clip-path: polygon(0 0, 85% 0, 100% 100%, 0% 100%);
 
@@ -292,9 +302,21 @@
       width: 100%;
       height: 500px;
       background-position: center;
-      background-image: url(../images/backgrounds/homepage_paris_mobile@2x.jpg);
-      background-image: -webkit-image-set(url(../images/backgrounds/homepage_paris_mobile.jpg) 1x,
-        url(../images/backgrounds/homepage_paris_mobile@2x.jpg) 2x);
+
+      &.webp {
+        background-image: url(../images/backgrounds/homepage_paris_mobile.jpg);
+        background-image: -webkit-image-set(
+          url(../images/backgrounds/homepage_paris_mobile.webp) 1x,
+          url(../images/backgrounds/homepage_paris_mobile@2x.webp) 2x
+        );
+        &.no-webp {
+          background-image: url(../images/backgrounds/homepage_paris_mobile.jpg);
+          background-image: -webkit-image-set(
+            url(../images/backgrounds/homepage_paris_mobile.jpg) 1x,
+            url(../images/backgrounds/homepage_paris_mobile@2x.jpg) 2x
+          );
+        }
+      }
       clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
     }
 
@@ -451,7 +473,7 @@
       margin: auto;
       margin-bottom: 2em;
 
-      @include responsive(mobile){
+      @include responsive(mobile) {
         width: 100% !important;
       }
     }
@@ -466,7 +488,6 @@
   }
 
   .owl-nav {
-
     button.owl-prev,
     button.owl-next {
       outline: none;
@@ -631,8 +652,10 @@
     width: 100%;
     height: 100%;
     background-image: url(../images/backgrounds/tictales_games_mosaic.jpg);
-    background-image: -webkit-image-set(url(../images/backgrounds/tictales_games_mosaic.jpg) 1x,
-      url(../images/backgrounds/tictales_games_mosaic@2x.jpg) 2x);
+    background-image: -webkit-image-set(
+      url(../images/backgrounds/tictales_games_mosaic.jpg) 1x,
+      url(../images/backgrounds/tictales_games_mosaic@2x.jpg) 2x
+    );
     background-size: cover;
     clip-path: polygon(15% 0, 0 100%, 100% 100%, 100% 0%);
 
@@ -670,8 +693,10 @@
     width: 100%;
     height: 100%;
     background-image: url("../images/backgrounds/asian_street.jpg");
-    background-image: -webkit-image-set(url(../images/backgrounds/asian_street.jpg) 1x,
-      url(../images/backgrounds/asian_street@2x.jpg) 2x);
+    background-image: -webkit-image-set(
+      url(../images/backgrounds/asian_street.jpg) 1x,
+      url(../images/backgrounds/asian_street@2x.jpg) 2x
+    );
     background-size: cover;
     clip-path: polygon(0 0, 85% 0, 100% 100%, 0% 100%);
 
@@ -753,8 +778,10 @@
       height: 180px;
       display: block;
       background-image: url(../images/backgrounds/pond_desktop.jpg);
-      background-image: -webkit-image-set(url(../images/backgrounds/pond_desktop.jpg) 1x,
-        url(../images/backgrounds/pond_desktop@2x.jpg) 2x);
+      background-image: -webkit-image-set(
+        url(../images/backgrounds/pond_desktop.jpg) 1x,
+        url(../images/backgrounds/pond_desktop@2x.jpg) 2x
+      );
       background-size: cover;
       background-position: center;
       position: relative;
@@ -798,7 +825,7 @@
       margin: auto;
       margin-bottom: 2em;
 
-      @include responsive(mobile){
+      @include responsive(mobile) {
         width: 100% !important;
       }
     }
@@ -943,7 +970,7 @@
   }
 
   @include responsive(mobile) {
-    .ui.stackable.grid>.wide.column {
+    .ui.stackable.grid > .wide.column {
       margin-top: 20px !important;
     }
   }
@@ -956,7 +983,7 @@
     text-align: left;
     color: white;
 
-    >label {
+    > label {
       font-size: 18px !important;
       font-weight: 300 !important;
 
